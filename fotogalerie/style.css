@@ -143,6 +143,22 @@ p {
     -webkit-transition: all 0.6s ease;
 }
 
+#tocGriechenland {
+    background-color: #97f5dc;
+    width: auto;
+    padding-top: 1px;
+    padding-bottom: 3px
+}
+
+#tocGriechenland:hover {
+    background-color: #75ffda;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: -2px;
+    margin-bottom: 0px;
+    transition: 0.1s;
+}
+
 #tocKreta {
     background-color: #fff1b2;
     width: auto;
@@ -296,7 +312,7 @@ p {
     margin-bottom: 0px;
 }
 
-#abstand1, #abstand2, #abstand4, #abstand3 {
+#abstand1, #abstand2, #abstand4, #abstand3, #abstand5, #abstand6 {
     width: 10%;
     position: relative;
     margin-bottom: 0px;
@@ -618,16 +634,6 @@ body {
     border-radius: 8px;
 }
 
-.numbertext {
-    color: #f2f2f2;
-    background-color: rgb(255, 255, 255);
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
 .row:after {
   display: table;
   clear: both;
@@ -650,34 +656,6 @@ body {
 .anzahl {
     padding-bottom: 5px;
     font-size: .9rem;
-}
-
-.sKreta {
-    color: #fff1b2;
-}
-
-.sLondon {
-    color: #ffb0b7;
-}
-
-.sWien {
-    color: #a2d7fe;
-}
-
-.sNatur {
-    color: #acdea1;
-}
-
-.sSonne {
-    color: #f5bf85;
-}
-
-.sTiere {
-    color: #d1a8f5;
-}
-
-.sFrühling {
-    color: #ff8bb6;
 }
 
 #strichi {

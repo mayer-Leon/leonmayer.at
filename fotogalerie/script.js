@@ -94,6 +94,8 @@ window.onresize = adjustContent;
             abstand1.style.display = "block";
             abstand3.style.display = "block";
             abstand4.style.display = "block";
+            abstand5.style.display = "block";
+            abstand6.style.display = "block";
         });
 
         vertical.forEach(element => {
@@ -200,10 +202,6 @@ function closeGalerie() {
 var slideIndex = 1;
 
 function currentSlide(n) {
-    
-    setTimeout(function() {
-        document.body.style.overflow = 'hidden';
-    }, 1000);
 
 
   showSlides(slideIndex = n);
@@ -226,8 +224,6 @@ function currentSlide(n) {
 
   slides[n - 1].style.display = "block";
   fullScreenGalerie.style.display = "inline";
-
-  document.title = "Einzelansicht";
 
   var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
