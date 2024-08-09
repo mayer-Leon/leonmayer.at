@@ -49,6 +49,17 @@ window.onresize = adjustContent;
         images.forEach(element => {
             element.style.borderRadius = "6px";
         });
+        
+        horizontal.forEach(element => {
+            element.style.width = "30%";
+            liege.style.width = "calc(90% + 20px)";
+            abstand2.style.display = "none";
+            abstand1.style.display = "none";
+            abstand3.style.display = "none";
+            abstand4.style.display = "none";
+            abstand5.style.display = "none";
+            abstand6.style.display = "none";
+        });
 
     } else if (windowWidth > 480 && windowWidth <= 768) {
         horizontal.forEach(element => {
@@ -73,6 +84,18 @@ window.onresize = adjustContent;
         });
 
         topic.style.marginTop = "0px";
+        
+        horizontal.forEach(element => {
+            element.style.width = "30%";
+            liege.style.width = "calc(90% + 20px)";
+            abstand2.style.display = "none";
+            abstand1.style.display = "none";
+            abstand3.style.display = "none";
+            abstand4.style.display = "none";
+            abstand5.style.display = "none";
+            abstand6.style.display = "none";
+        });
+
 
     } else if (windowWidth > 768 && windowWidth <= 1900) {
         horizontal.forEach(element => {
@@ -84,8 +107,19 @@ window.onresize = adjustContent;
         welcome.forEach(element => {
             element.style.fontSize = "1.5rem";
         });
+        
+        horizontal.forEach(element => {
+            element.style.width = "30%";
+            liege.style.width = "calc(90% + 20px)";
+            abstand2.style.display = "block";
+            abstand1.style.display = "block";
+            abstand3.style.display = "block";
+            abstand4.style.display = "block";
+            abstand5.style.display = "block";
+            abstand6.style.display = "block";
+        });
 
-        unnötigerText.style.display = "inline-block";
+
     } else {
         horizontal.forEach(element => {
             element.style.width = "30%";
@@ -105,11 +139,12 @@ window.onresize = adjustContent;
         welcome.forEach(element => {
             element.style.fontSize = "1.5rem";
         });
-
-        unnötigerText.style.display = "inline-block";
-    }
     
-}
+}}
+
+changeContentForMobile();
+window.onload = adjustContent;
+window.onresize = adjustContent;
 
 function isMobileDevice() {
     return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
@@ -197,6 +232,7 @@ function closeGalerie() {
     fullScreenGalerie.style.display = "none";
     window.onscroll = null;
     document.body.style.overflow = '';
+    scrollToTopButton.style.display = "inline";
 }
 
 var slideIndex = 1;
