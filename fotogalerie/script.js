@@ -41,11 +41,6 @@ window.onresize = adjustContent;
         topic.forEach(element => {
             element.style.fontSize = "1.4rem";
         });
-
-        fullScreenButton.forEach(element => {
-            element.style.display = "none";
-        });
-
         images.forEach(element => {
             element.style.borderRadius = "6px";
         });
@@ -71,10 +66,6 @@ window.onresize = adjustContent;
 
         topic.forEach(element => {
             element.style.fontSize = "1.4rem";
-        });
-
-        fullScreenButton.forEach(element => {
-            element.style.display = "none";
         });
 
         images.forEach(element => {
