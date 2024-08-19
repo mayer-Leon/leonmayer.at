@@ -1,3 +1,21 @@
+function black() {
+    // Select all elements with the class "menuItem"
+    let menuItems = document.querySelectorAll(".menuItem");
+    let black = document.getElementById("black");
+
+    // Loop through each menuItem and add the event listener
+    menuItems.forEach((menuItem) => {
+        menuItem.addEventListener("mouseover", () => {
+            black.style.opacity = "1";
+        });
+
+        menuItem.addEventListener("mouseout", () => {
+            black.style.opacity = "0";
+        });
+    });
+};
+
+
 function adjustContent() {
     let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
@@ -23,6 +41,10 @@ document.addEventListener("keydown", function(event) {
         }
     }
 });
+
+
+
+window.onload = black();
 
 changeContentForMobile();
 window.onload = adjustContent;
@@ -96,12 +118,12 @@ window.onresize = adjustContent;
         });
         
         horizontal.forEach(element => {
-            abstand2.style.display = "block";
-            abstand1.style.display = "block";
-            abstand3.style.display = "block";
-            abstand4.style.display = "block";
-            abstand5.style.display = "block";
-            abstand6.style.display = "block";
+            abstand2.style.display = "none";
+            abstand1.style.display = "none";
+            abstand3.style.display = "none";
+            abstand4.style.display = "none";
+            abstand5.style.display = "none";
+            abstand6.style.display = "none";
         });
 
 
@@ -109,6 +131,7 @@ window.onresize = adjustContent;
         horizontal.forEach(element => {
             element.style.width = "30%";
             liege.style.width = "calc(90% + 20px)";
+            liege.style.maxWidth = "95vw";
             abstand2.style.display = "block";
             abstand1.style.display = "block";
             abstand3.style.display = "block";
@@ -228,7 +251,7 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 
   var fullScreenGalerie = document.getElementById('fullScreenGalerie');
-  var slides = fullScreenGalerie.getElementsByClassName('mySlides');
+  let slides = document.getElementsByClassName('mySlides');
 
 
   if (slides.length === 0) {
@@ -253,7 +276,7 @@ function currentSlide(n) {
     window.scrollTo(scrollLeft, scrollTop);
   };
 
-  scrollToTopButton.style.display = "none";
+  scrollButton.style.display = "none";
 }
 
 function plusSlides(n) {
@@ -273,3 +296,5 @@ function showSlides(n) {
 
   slides[slideIndex - 1].style.display = "block";
 }
+
+let slides = document.getElementsByClassName('mySlides');

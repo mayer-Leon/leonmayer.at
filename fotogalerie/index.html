@@ -2,14 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Fotogalerie • Leon Mayer, Fotograf</title>
     <link rel="stylesheet" href="style.css">
     <!--icon-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
-<body>
+<body onresize="adjustContent()">
+
+    <div id="menu">
+        <div id="black"></div>
+        <div id="menuName"><h2 id="menuLeon" class="h2">Leon Mayer</h2><img id="menuKamera" src="Seiten-Fotos/Logo3-Transparent.png" alt=""></div>
+        <div id="menuBarContainer">
+        <div id="menuBar">
+            <a class="menuItem" id="menuHome" href="leonmayer.at">HOME</a>
+            <a class="menuItem" id="menuAbout" href="leonmayer.at/über-mich">MEINE VISION</a>
+            <a class="menuItem" id="menuFotogalerie" href="fotogalerie/index.html">FOTOGALERIE</a>
+            <a class="menuItem" id="menuKontakt" href="leonmayer.at/kontakt">KONTAKT</a>
+        </div></div>
+        <div id="menuBurger"><button id="burger" onclick="showDialog()">☰</button></div>
+    </div>
+    
+
+    <div id="space"></div>
+    
     <div id="scrollToTop"></div>
     <div id="toC1"><a href="#scrollToTop" id="scrollToTopButton"><img loading="lazy" src="Fotos/arrowUp.png" id="arrowUp"></a></div>
 
