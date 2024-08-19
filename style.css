@@ -386,21 +386,11 @@ hr {
 
 @media (max-width: 1300px) {
     #content {
-    background-color: #d6d6d6;        
+    background-color: #e7e7e7;        
     }
 
     #description {
         zoom: 90%;
-    }
-}
-
-@media (max-width: 700px) {
-    #content {
-    background-color: #a7a7a7;        
-    }
-
-    #description {
-        zoom: 80%;
     }
 }
 
