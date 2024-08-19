@@ -5,8 +5,8 @@
     --black: #000000;
     --darkGrey: #3f3f3f;
     --lightGrey: #d5d5d5;
-    --menu: #e9e9e9;
-    --menuOver: #e9e9e9b5;
+    --menu: #eeeeee94;
+    --menuOver: #eeeeee8e;
 }
 
 body {
@@ -115,6 +115,7 @@ p {
     margin-top: 10px;
     font-size: 17px;
     z-index: 1000;
+    font-weight: 500;
 }
 
 .menuItem:hover {
@@ -261,6 +262,15 @@ p {
     z-index: 0;
 }
 
+#menuBG {
+    background-color: #eeeeee65;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    z-index: -4;
+    margin: auto;
+}
+
 #parallax {
     width: 100%;
     height: 100vh;
@@ -275,7 +285,7 @@ p {
 
 #space {
     background-color: var(--bg);
-    height: 100px;
+    height: 70px;
     width: 100%;
 }
 
@@ -294,7 +304,7 @@ p {
     height: 300px;
     margin-top: -75px;
     margin-bottom: -5px;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 #meJpg:not(hover) {
@@ -302,7 +312,7 @@ p {
     height: 200px;
     margin-top: 0px;
     margin-bottom: 20px;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 #me {
@@ -337,9 +347,9 @@ p {
 button {
     background-color: var(--darkGrey);
     font-family: "Poppins", sans-serif;
-    font-size: 1.05rem;
-    font-weight: 700;
-    text-decoration: underline;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
     height: 35px;
     padding-bottom: 2px;
     padding-left: 40px;
