@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    --bg: #ffffff;
+    --black: #000000;
+    --darkGrey: #3f3f3f;
+    --lightGrey: #d5d5d5;
+    --menu: #e9e9e9;
+    --menuOver: #e9e9e9b5;
+}
+
 body {
     font-family: "Poppins", sans-serif;
-    background-color: #151515;
-    color: #ffffff;
+    background-color: var(--bg);
+    color: var(--text);
     align-self: center;
     text-align: center;
     margin-top: 0;
@@ -16,8 +25,8 @@ body {
 }
 
 ::selection {
-    color: #000000;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: var(--black);
 }
 
 .h1 {
@@ -62,13 +71,13 @@ p {
     z-index: 1000;
     backdrop-filter: blur(10px);
     user-select: none;
-    color: #bbbbbb;
+    color: var(--darkGrey);
 }
 
 #menuName {
     display: flex;
     width: clamp(200px, 25vw, 6000px);
-    background-color: #0000009a;
+    background-color: var(--menu);
     height: 50px;
     justify-content: center;
     z-index: 1002;
@@ -77,7 +86,7 @@ p {
 #menuLeon {
     font-size: 21px;
     font-weight: 800;
-    color: #bbbbbb;
+    color: var(--darkGrey);
     z-index: 1000;
     margin-top: 8px;
     min-width: 120px;
@@ -96,12 +105,12 @@ p {
     width: 75vw;
     display: flex;
     justify-content: space-evenly;
-    background-color: #0000009a;
+    background-color: var(--menu);
     z-index: 1000;
 }
 
 .menuItem {
-    color: #bbbbbb;
+    color: var(--darkGrey);
     text-decoration: none;
     margin-top: 10px;
     font-size: 17px;
@@ -113,19 +122,19 @@ p {
 }
 
 .menuItem:hover {
-    color: white;
+    color: var(--black);
     transition: 0.3s;
 }
 
 .menuItem:not(:hover) {
     z-index: 0;
     transition: .3s;
-    color: #bbbbbb;
+    color: var(--darkGrey);
 }
 
 #menuBurger {
     width: 20vw;
-    background-color: #0000009a;
+    background-color: var(--menu);
     display: none;
     z-index: 1000;
 }
@@ -152,12 +161,12 @@ p {
 }
 
 #menuDialog {
-    color: black;
+    color: var(--black);
     backdrop-filter: blur(50px);
 }
 
 .dialogA {
-    color: black;
+    color: var(--black);
 }
 
 #black {
@@ -165,7 +174,7 @@ p {
     width: 100vw;
     height: 50px;
     position: fixed;
-    background-color: #00000081;
+    background-color: var(--menuOver);
     opacity: 0;
     z-index: 1001;
     pointer-events: none;
@@ -174,7 +183,7 @@ p {
 }
 
 #space {
-    width: 90vw;
+    width: 100%;
     background-color: #151515;
     height: 50px;
     z-index: 900;
@@ -229,11 +238,11 @@ p {
 
 #menuHome {
     text-decoration: underline;
-    color: white;
+    color: var(--black);
 }
 
 #banner {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #00000000;
     width: 100%;
     height: 100vh;
     max-height: 60vw;
@@ -260,8 +269,14 @@ p {
 }
 
 #content {
-    background-color: #151515;
+    background-color: var(--bg);
     box-shadow: #000000 -5px 0px 200px;
+}
+
+#space {
+    background-color: var(--bg);
+    height: 100px;
+    width: 100%;
 }
 
 #i1000px {
@@ -275,10 +290,10 @@ p {
 }
 
 #meJpg:hover {
-    width: 270px;
-    height: 270px;
-    margin-top: -35px;
-    margin-bottom: -15px;
+    width: 300px;
+    height: 300px;
+    margin-top: -75px;
+    margin-bottom: -5px;
     transition: 0.2s ease-in-out;
 }
 
@@ -296,7 +311,7 @@ p {
     object-fit: cover;
     margin: auto;
     align-items: center;
-    border-radius: 135px;
+    border-radius: 150px;
 }
 
 #center {
@@ -320,7 +335,7 @@ p {
 }
 
 button {
-    background-color: #d5d5d5;
+    background-color: var(--darkGrey);
     font-family: "Poppins", sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
@@ -339,21 +354,29 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
-    background-color: #3f3f3f;
-    color: white;
+button:hover {    
+    background-color: var(--lightGrey);
+    color: var(--black);
     transition: 0.2s;
     cursor: pointer;
 }
 
 button:not(:hover) {
-    background-color: #d5d5d5;
-    color: #000000;
+    background-color: var(--darkGrey);
+    color: white;
     transition: 0.1s;
 }
 
 #description {
     zoom: 100%;
+}
+
+hr {
+    border: solid 1px;
+    color: var(--black);
+    border-width: 0px;
+    background-color: var(--black);
+    height: 2px;
 }
 
 
@@ -363,7 +386,7 @@ button:not(:hover) {
 
 @media (max-width: 1300px) {
     #content {
-    background-color: #3b3b3b;        
+    background-color: #d6d6d6;        
     }
 
     #description {
@@ -373,7 +396,7 @@ button:not(:hover) {
 
 @media (max-width: 700px) {
     #content {
-    background-color: #5e5e5e;        
+    background-color: #a7a7a7;        
     }
 
     #description {
