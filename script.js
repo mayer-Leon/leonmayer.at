@@ -1,20 +1,3 @@
-window.onload = function() {
-    // Select all elements with the class "menuItem"
-    let menuItems = document.querySelectorAll(".menuItem");
-    let black = document.getElementById("black");
-
-    // Loop through each menuItem and add the event listener
-    menuItems.forEach((menuItem) => {
-        menuItem.addEventListener("mouseover", () => {
-            black.style.opacity = "1";
-        });
-
-        menuItem.addEventListener("mouseout", () => {
-            black.style.opacity = "0";
-        });
-    });
-};
-
 const dialog = document.getElementById("menuDialog");
 
 function showDialog() {
@@ -25,7 +8,23 @@ function closeDialog() {
     dialog.close();
 }
 
+function openLeonMayer() {
+    location.reload();
+}
+
 var w = window.innerWidth;
 var h = window.innerHeight;
 
 widthText.innerHTML = w + " x " + h;
+
+document.querySelectorAll('#toC1 a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault(); // Prevent default behavior of anchor tag
+      const targetId = this.getAttribute('href').substring(1); // Get the id of the target section
+      const targetElement = document.getElementById(targetId); // Find the target element
+      if (targetElement) {
+        // Scroll to the target element smoothly
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
