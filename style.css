@@ -7,6 +7,9 @@
     --lightGrey: #d5d5d5;
     --menu: #eeeeee94;
     --menuOver: #eeeeee8e;
+    --theme: #248697;
+    --themeLight: #029fbb;
+    --themeDark: #007460;
 }
 
 body {
@@ -69,7 +72,7 @@ p {
     position: fixed;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
     user-select: none;
     color: var(--darkGrey);
 }
@@ -78,15 +81,17 @@ p {
     display: flex;
     width: clamp(200px, 25vw, 6000px);
     background-color: var(--menu);
-    height: 50px;
     justify-content: center;
     z-index: 1002;
+    margin-bottom: 0;
+    padding-top: 0;
+    font-display: optional;
 }
 
 #menuLeon {
     font-size: 21px;
     font-weight: 800;
-    color: var(--darkGrey);
+    color: var(--black);
     z-index: 1000;
     margin-top: 8px;
     min-width: 120px;
@@ -94,9 +99,9 @@ p {
 
 #menuKamera {
     margin-left: 10px;
-    height: 28px;
-    width: 36px;
-    margin-top: 10px;
+    height: 35px;
+    width: 35px;
+    margin-top: 6px;
     z-index: 1000;
 }
 
@@ -123,11 +128,13 @@ p {
 }
 
 .menuItem:hover {
-    color: var(--black);
+    color: var(--themeLight);
+    font-weight: 600;
     transition: 0.3s;
 }
 
 .menuItem:not(:hover) {
+    font-weight: 500;
     z-index: 0;
     transition: .3s;
     color: var(--darkGrey);
@@ -177,7 +184,7 @@ p {
     position: fixed;
     background-color: var(--menuOver);
     opacity: 0;
-    z-index: 1001;
+    z-index: -1;
     pointer-events: none;
 
     transition: 0.3s;
@@ -203,9 +210,10 @@ p {
     }
 
     #menuKamera {
-        margin-top: 10px;
-        height: 21px;
-        width: 27px;
+        margin-top: 8px;
+        height: 28px;
+        width: 28px;
+        margin-left: 0;
     }
 }
 
@@ -305,6 +313,7 @@ p {
     margin-top: -75px;
     margin-bottom: -5px;
     transition: 0.3s ease-in-out;
+    transition-delay: 0.1s;
 }
 
 #meJpg:not(hover) {
@@ -313,6 +322,7 @@ p {
     margin-top: 0px;
     margin-bottom: 20px;
     transition: 0.3s ease-in-out;
+    transition-delay: 0.1s;
 }
 
 #me {
@@ -322,6 +332,9 @@ p {
     margin: auto;
     align-items: center;
     border-radius: 150px;
+    /*border-style: solid;
+    border-width: 6px;
+    border-color: var(--themeDark);*/
 }
 
 #center {
@@ -345,7 +358,8 @@ p {
 }
 
 button {
-    background-color: var(--darkGrey);
+    background-color: #2486974c;
+    color: black;
     font-family: "Poppins", sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
@@ -358,6 +372,9 @@ button {
     border-width: 0;
     border-style: solid;
     font-stretch:ultra-condensed;
+    border-width: 3px;
+    border-style: solid;
+    border-color: var(--theme);
 }
 
 #buttonFotogalerie {
@@ -365,15 +382,16 @@ button {
 }
 
 button:hover {    
-    background-color: var(--lightGrey);
-    color: var(--black);
+    background-color: var(--theme);
+    color: white;
     transition: 0.2s;
     cursor: pointer;
+    height: 35px;
 }
 
 button:not(:hover) {
-    background-color: var(--darkGrey);
-    color: white;
+    background-color: #2486974c;
+    color: black;
     transition: 0.1s;
 }
 
@@ -387,6 +405,10 @@ hr {
     border-width: 0px;
     background-color: var(--black);
     height: 2px;
+}
+
+#hr1 {
+    margin-top: 40px;
 }
 
 
