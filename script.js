@@ -28,3 +28,27 @@ document.querySelectorAll('#toC1 a').forEach(anchor => {
       }
     });
   });
+  
+  let scrollButton = document.getElementById("scrollToTopButton");
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
+        scrollButton.style.opacity = "0";
+        scrollButton.style.transition = "0.5s";
+    } else {
+        scrollButton.style.opacity = "1";
+        scrollButton.style.transition = "0.5s";
+    }
+  };
+
+  function hideScrollButton() {
+    let vw62 = window.innerWidth*0.62;
+
+    if (window.innerHeight > vw62) {
+        scrollButton.style.display = "none";
+    }
+  }
+
+  hideScrollButton();

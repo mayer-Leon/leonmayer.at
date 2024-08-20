@@ -75,8 +75,6 @@ p {
     backdrop-filter: blur(7px);
     user-select: none;
     color: var(--darkGrey);
-
-    border-radius: 0px 0px 10px 10px;
 }
 
 #menuName {
@@ -88,8 +86,6 @@ p {
     margin-bottom: 0;
     padding-top: 0;
     font-display: optional;
-
-    border-radius: 0px 0px 0px 10px;
 }
 
 #menuKamera:hover, #menuLeon:hover {
@@ -120,7 +116,6 @@ p {
     justify-content: space-evenly;
     background-color: var(--menu);
     z-index: 1000;
-    border-radius: 0px 0px 10px 0px;
 }
 
 .menuItem {
@@ -305,7 +300,7 @@ p {
 
 #content {
     z-index: 2;
-    margin-top: -70px;
+    margin-top: -110px;
 }
 
 #space {
@@ -316,27 +311,48 @@ p {
 }
 
 #space2 {
-    height: 50px;
+    height: 80px;
     background-color: rgba(0, 0, 0, 0);
     z-index: -5000;
 }
 
 #scrollToTopButton {
-    position: fixed;
+    position: absolute;
     margin: auto;
-    bottom: 10px;
+    bottom: 0px;
     z-index: 5;
-    background-color: #31313170;
-    backdrop-filter: blur(10px);
+    background-color: var(--bg);
     width: 60px;
-    height: 40px;
+    height: 60px;
     font-size: 20px;
     font-weight: 900;
     right: calc(50% - 30px);
-
-    box-shadow: 2px 3px #ffffff;
-    border-radius: 10px;
+    border-radius: 15px 15px 0px 0px;
     opacity: 1;
+}
+
+#scrollToTopButton:hover {
+    bottom: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+#scrollToTopButton:not(hover) {
+    bottom: 0px;
+    transition: 0.2s ease-in-out;
+}
+
+#scrollToTopButton:active {
+    bottom: 30px;
+}
+
+#arrowUp {
+    width: 35px;
+    margin: auto;
+    vertical-align: center;
+    margin-top: 3px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #i1000px {
