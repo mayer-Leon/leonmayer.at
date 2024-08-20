@@ -1,3 +1,12 @@
+window.addEventListener('scroll', function() {
+    // Berechne die Parallax-Geschwindigkeit, z.B. 0.5 bedeutet, dass das Bild halb so schnell scrollt wie der Inhalt
+    var scrollPosition = window.scrollY;
+    var parallaxSpeed = 0.5;
+    
+    // Setze die neue Hintergrundposition basierend auf dem Scrollwert
+    document.querySelector('.bannerFotos').style.top = -(scrollPosition * parallaxSpeed) + 'px';
+});
+
 const dialog = document.getElementById("menuDialog");
 
 function showDialog() {
