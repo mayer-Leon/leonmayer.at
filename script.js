@@ -37,8 +37,8 @@ function shrinkImage() {
       meJpg.style.marginBottom = "20px";
       meJpg.style.transition = "0.3s ease-in-out";
     } else {
-      meJpg.style.width = "300";
-      meJpg.style.height = "300";
+      meJpg.style.width = "300px";
+      meJpg.style.height = "300px";
       meJpg.style.marginTop = "-75px";
       meJpg.style.marginBottom = "-5px";
       meJpg.style.transition = "0.3s ease-in-out";      
