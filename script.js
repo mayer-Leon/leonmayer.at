@@ -21,6 +21,15 @@ function openLeonMayer() {
     location.reload();
 }
 
+function shrinkImage() {
+  let meJpg = document.getElementById("meJpg");
+  meJpg.style.width = "200px";
+  meJpg.style.height = "200px";
+  meJpg.style.marginTop = "0px";
+  meJpg.style.marginBottom = "20px";
+  meJpg.style.transition = "0.3s ease-in-out";
+}
+
 var w = window.innerWidth;
 var h = window.innerHeight;
 
