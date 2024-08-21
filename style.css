@@ -376,7 +376,7 @@ p {
     transition-delay: 0.1s;
 }
 
-#meJpg:not(hover), #meJpg:active {
+#meJpg:not(hover) {
     width: 200px;
     height: 200px;
     margin-top: 0px;
