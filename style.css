@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --bg: #ffffff;
-    --black: #000000;
-    --darkGrey: #3f3f3f;
-    --lightGrey: #d5d5d5;
-    --menu: #e7e7e7;
-    --menuOver: #eeeeee8e;
-    --theme: #247697;
-    --themeLight: #009ece;
-    --themeDark: #0d3e52;
+    --bg: #151515;
+    --text: #ffffff;
+    --white: #ffffff;
+    --darkGrey: #b6b6b6;
+    --lightGrey: #464646;
+    --menu: #424242;
+    --menuOver: #5555558e;
+    --theme: #2179ac;
+    --themeLight: #ffffff;
+    --themeDark: #2d2d2d;
 }
 
 body {
@@ -28,8 +29,8 @@ body {
 }
 
 ::selection {
-    color: #ffffff;
-    background-color: var(--black);
+    color: #000000;
+    background-color: var(--white);
 }
 
 .h1 {
@@ -52,7 +53,7 @@ body {
     margin-right: 0px;
     margin-top: 0;
     margin-bottom: 5px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     display: inline-block;
 }
 
@@ -94,8 +95,8 @@ p {
 
 #menuLeon {
     font-size: 21px;
-    font-weight: 800;
-    color: var(--black);
+    font-weight: 700;
+    color: var(--white);
     z-index: 1000;
     margin-top: 8px;
     min-width: 120px;
@@ -132,7 +133,7 @@ p {
 }
 
 .menuItem:hover {
-    color: var(--themeLight);
+    color: white;
     transition: 0.3s;
 }
 
@@ -172,12 +173,12 @@ p {
 }
 
 #menuDialog {
-    color: var(--black);
+    color: var(--white);
     backdrop-filter: blur(50px);
 }
 
 .dialogA {
-    color: var(--black);
+    color: var(--white);
 }
 
 @media (max-width: 750px){
@@ -229,9 +230,9 @@ p {
 
 hr {
     border: solid 1px;
-    color: var(--black);
+    color: var(--white);
     border-width: 0px;
-    background-color: var(--black);
+    background-color: var(--white);
     height: 2px;
 }
 
@@ -247,12 +248,14 @@ hr {
 #banner {
     background-color: #00000000;
     width: 100%;
-    height: 100vh;
-    max-height: 60vw;
+    height: calc(100vh - 80px);
+    max-height: calc(60vw - 80px);
 
     margin: auto;
     position: fixed;
     z-index: -5;
+
+    margin-top: 50px;
 }
 
 .bannerFotos {
@@ -303,16 +306,19 @@ hr {
 }
 
 #parallax {
+    background-color: #000000a6;
+    opacity: 0;
     z-index: 50;
     width: 100%;
-    height: 100vh;
-    max-height: 60vw;
-    /*backdrop-filter: blur(10px);*/
+    height: calc(100vh - 80px);
+    max-height: calc(60vw - 80px);
+
+    margin-top: 50px;
 }
 
 #content {
     z-index: 2;
-    margin-top: -110px;
+    margin-top: -80px;
 }
 
 #space {
@@ -339,7 +345,7 @@ hr {
     font-size: 20px;
     font-weight: 900;
     right: calc(50% - 30px);
-    border-radius: 15px 15px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
     opacity: 1;
 }
 
@@ -361,10 +367,12 @@ hr {
     width: 35px;
     margin: auto;
     vertical-align: center;
-    margin-top: 3px;
+    margin-top: -25px;
     padding-bottom: 30px;
     padding-left: 10px;
     padding-right: 10px;
+    filter: invert(90);
+    transform: rotate(180deg);
 }
 
 #i1000px {
@@ -377,25 +385,6 @@ hr {
     width: 200px;
     height: 200px;
     margin-bottom: 20px;
-}
-
-#meJpg:hover {
-    width: 300px;
-    height: 300px;
-    margin-top: -75px;
-    margin-bottom: -5px;
-    transition: 0.3s ease-in-out;
-    transition-delay: 0.1s;
-}
-
-#meJpg:not(hover) {
-    width: 200px;
-    height: 200px;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    transition: 0.3s ease-in-out;
-    transition-delay: 0.1s;
-    z-index: 999;
 }
 
 #me {
@@ -422,7 +411,7 @@ hr {
 }
 
 #descriptionCard {
-    background-color: rgba(255, 255, 255, 0.116);
+    background-color: #1515151e;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -438,23 +427,18 @@ hr {
 }
 
 button {
-    background-color: #2486974c;
+    background-color: #afafaf;
     color: black;
     font-family: "Poppins", sans-serif;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.05rem;
+    font-weight: 700;
     text-decoration: none;
-    height: 35px;
+    height: 30px;
     padding-bottom: 2px;
     padding-left: 40px;
     padding-right: 40px;
-    border-radius: 20px;
-    border-width: 0;
-    border-style: solid;
-    font-stretch:ultra-condensed;
-    border-width: 3px;
-    border-style: solid;
-    border-color: var(--theme);
+    border-radius: 7px;
+    border-style: none;
 }
 
 #buttonFotogalerie {
@@ -462,15 +446,13 @@ button {
 }
 
 button:hover {    
-    background-color: var(--theme);
-    color: white;
+    background-color: white;
     transition: 0.2s;
     cursor: pointer;
-    height: 35px;
 }
 
 button:not(:hover) {
-    background-color: #2486974c;
+    background-color: #d0d0d0;
     color: black;
     transition: 0.1s;
 }
@@ -502,25 +484,99 @@ button:not(:hover) {
         zoom: 100%;
         background-color: var(--bg);
         padding-top: 50px;
-        box-shadow: #000000 -5px 0px 200px;
-        border-radius: 10px 10px 0px 0px;
-        padding-bottom: 90px;
+        padding-bottom: 80px;
     }
 
-    #photoPreview {
-        background-color: var(--themeDark);
-        color: white;
-        width: 100%;
-        height: 500px;
-    }
+        #hr1 {
+            color: white;
+            background-color: white;
+            border-color: white;
+            width: 80%;
+            height: 1px;
+            margin-left: 10%;
+            margin: auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: -30px;
+        }
 
     #about {
         background-color: var(--bg);
-        height: 500px;
+        height: auto;
         width: 100%;
         margin-top: -10px;
         margin-bottom: 0;
+        padding-top: 30px;
     }
+    
+        #aboutCard {
+            background-color: var(--themeDark);
+            color: #ffffff;
+            width: 800px;
+            max-width: 90vw;
+            margin: auto;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #aboutTexte {
+            width: 70%; /* This takes up 70% of the parent */
+            padding: 20px; /* Ensure padding is accounted for in layout */
+            box-sizing: border-box; /* Include padding in the element's width */
+            line-height: 1.8rem;
+            margin-top: 0;
+        }
+
+        #aboutH {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1px;
+        }
+
+        .aboutText {
+            font-size: 1.1rem;
+            font-weight: 300;
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        #b {
+            font-weight: 600;
+        }
+        
+        #aboutFotoDiv {
+            width: 30%;
+            overflow: hidden;
+        }
+        
+        #aboutFoto {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        #aboutFoto:hover {
+            scale: 130%;
+            transition: 0.2s ease-in-out;
+            cursor: pointer;
+        }
+
+        #aboutFoto:not(:hover) {
+            scale: 100%;
+            transition: 0.2s ease-in-out;
+        }
+
+        #photoPreview {
+            background-color: var(--bg);
+            width: 100%;
+            height: 500px;
+        }
 
 #blueHr {
     color: var(--themeDark);
@@ -562,3 +618,26 @@ button:not(:hover) {
     }
 }
 
+@media (max-width: 700px) {
+
+    #aboutCard {
+        flex-direction: column-reverse;
+        width: 500px;
+        max-width: 90%;
+    }
+
+    #aboutTexte {
+        width: 100%;
+    }
+
+    #aboutFotoDiv {
+        width: 100%;
+        height: 200px;
+    }
+
+    #aboutFoto {  
+        object-fit: cover;
+        object-position: center 20%;
+        transition: 0s;
+    }
+}

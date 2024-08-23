@@ -2,9 +2,13 @@ window.addEventListener('scroll', function() {
     // Berechne die Parallax-Geschwindigkeit, z.B. 0.5 bedeutet, dass das Bild halb so schnell scrollt wie der Inhalt
     var scrollPosition = window.scrollY;
     var parallaxSpeed = 0.5;
+
+    let iHeight = window.innerHeight - 80;
+    let percentage = (window.scrollY / iHeight) -0.2;
     
     // Setze die neue Hintergrundposition basierend auf dem Scrollwert
     document.querySelector('.bannerFotos').style.top = -(scrollPosition * parallaxSpeed) + 'px';
+    document.getElementById("parallax").style.opacity = percentage;
 });
 
 const dialog = document.getElementById("menuDialog");
@@ -24,27 +28,6 @@ function openLeonMayer() {
 function isMobile() {
   const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
   return regex.test(navigator.userAgent);
-};
-
-let meJpg = document.getElementById("meJpg");
-
-function shrinkImage() {
-  if (isMobile()) {
-    if (meJpg?.clientHeight > 250) {
-      meJpg.style.width = "200px";
-      meJpg.style.height = "200px";
-      meJpg.style.marginTop = "0px";
-      meJpg.style.marginBottom = "20px";
-      meJpg.style.transition = "0.3s ease-in-out";
-    } else {
-      meJpg.style.width = "300px";
-      meJpg.style.height = "300px";
-      meJpg.style.marginTop = "-75px";
-      meJpg.style.marginBottom = "-5px";
-      meJpg.style.transition = "0.3s ease-in-out";      
-    };
-
-  };
 };
 
 var w = window.innerWidth;
