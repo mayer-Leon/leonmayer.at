@@ -19,6 +19,7 @@ function showDialog() {
     let blur = document.getElementById("blur");
     blur.style.backgroundColor = "#0000006a";
     blur.style.backdropFilter = "blur(5px)";
+    blur.style.webkitBackdropFilter = "blur(5px)";
     blur.style.pointerEvents = "all";
 };
 
@@ -28,6 +29,7 @@ function closeDialog() {
     let blur = document.getElementById("blur");
     blur.style.backgroundColor = "#00000000";
     blur.style.backdropFilter = "blur(0px)";
+    blur.style.webkitBackdropFilter = "blur(5px)";
     blur.style.pointerEvents = "none";
 };
 
