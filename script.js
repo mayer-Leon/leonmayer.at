@@ -1,200 +1,55 @@
-function black() {
-    // Select all elements with the class "menuItem"
-    let menuItems = document.querySelectorAll(".menuItem");
-    let black = document.getElementById("black");
+window.addEventListener('scroll', function() {
+    // Berechne die Parallax-Geschwindigkeit, z.B. 0.5 bedeutet, dass das Bild halb so schnell scrollt wie der Inhalt
+    var scrollPosition = window.scrollY;
+    var parallaxSpeed = 0.4;
 
-    // Loop through each menuItem and add the event listener
-    menuItems.forEach((menuItem) => {
-        menuItem.addEventListener("mouseover", () => {
-            black.style.opacity = "1";
-        });
-
-        menuItem.addEventListener("mouseout", () => {
-            black.style.opacity = "0";
-        });
-    });
-};
-
-
-function adjustContent() {
-    let windowWidth = window.innerWidth;
-    let windowHeight = window.innerHeight;
-    let horizontal = document.querySelectorAll(".horHor");
-    let vertical = document.querySelectorAll(".verVer");
-    let fullScreenButton = document.querySelectorAll(".fullScreen");
-    let topic = document.querySelectorAll(".topic");
-    let welcome = document.querySelectorAll(".welcome");
-    let images = document.querySelectorAll('img');
+    let iHeight = window.innerHeight - 80;
+    let percentage = (window.scrollY / iHeight) -0.2;
     
-document.addEventListener("keydown", function(event) {
-    event.preventDefault();
-    if (event.key === "ArrowLeft" || event.key === "a") {
-        prev.click();
-    }
-    else if (event.key === "ArrowRight" || event.key === "d") {
-        next.click();
-    }
-    else if (event.key === "Escape") {
-        if (window.fullscreenElement) {
-            window.exitFullscreen();
-            closeGalerie();
-        }
-    }
+    // Setze die neue Hintergrundposition basierend auf dem Scrollwert
+    document.querySelector('.bannerFotos').style.top = -(scrollPosition * parallaxSpeed) + 'px';
+    document.getElementById("parallax").style.opacity = percentage;
 });
 
+const dialog = document.getElementById("menuDialog");
 
+function showDialog() {
+    menuDialog.style.opacity = "1";
+    menuDialog.style.pointerEvents = "all";
+    let blur = document.getElementById("blur");
+    blur.style.backgroundColor = "#0000006a";
+    blur.style.backdropFilter = "blur(5px)";
+    blur.style.pointerEvents = "all";
+};
 
-window.onload = black();
+function closeDialog() {
+    menuDialog.style.opacity = "0";
+    menuDialog.style.pointerEvents = "none";
+    let blur = document.getElementById("blur");
+    blur.style.backgroundColor = "#00000000";
+    blur.style.backdropFilter = "blur(0px)";
+    blur.style.pointerEvents = "none";
+};
 
-changeContentForMobile();
-window.onload = adjustContent;
-window.onresize = adjustContent;
-
-    if (windowWidth <= 480) {
-        horizontal.forEach(element => {
-            element.style.width = "95%";
-            liege.style.width = "95%";
-        });
-
-        vertical.forEach(element => {
-            element.style.width = "95%";
-        });
-
-        topic.forEach(element => {
-            element.style.fontSize = "1.4rem";
-        });
-        images.forEach(element => {
-            element.style.borderRadius = "6px";
-        });
-        
-        horizontal.forEach(element => {
-            abstand2.style.display = "none";
-            abstand1.style.display = "none";
-            abstand3.style.display = "none";
-            abstand4.style.display = "none";
-            abstand5.style.display = "none";
-            abstand6.style.display = "none";
-        });
-
-    } else if (windowWidth > 480 && windowWidth <= 768) {
-        horizontal.forEach(element => {
-            element.style.width = "90%";
-            liege.style.width = "90%";
-        });
-
-        vertical.forEach(element => {
-            element.style.width = "90%";
-        });
-
-        topic.forEach(element => {
-            element.style.fontSize = "1.4rem";
-        });
-
-        images.forEach(element => {
-            element.style.borderRadius = "6px";
-        });
-
-        topic.style.marginTop = "0px";
-        
-        horizontal.forEach(element => {
-            abstand2.style.display = "none";
-            abstand1.style.display = "none";
-            abstand3.style.display = "none";
-            abstand4.style.display = "none";
-            abstand5.style.display = "none";
-            abstand6.style.display = "none";
-        });
-
-
-    } else if (windowWidth > 768 && windowWidth <= 1900) {
-        horizontal.forEach(element => {
-            element.style.width = "45%";
-            referenceElementOne.parentElement.insertBefore(elementToMoveOne, referenceElementOne);
-            referenceElementTwo.parentElement.insertBefore(elementToMoveTwo, referenceElementTwo);
-        });
-
-        welcome.forEach(element => {
-            element.style.fontSize = "1.5rem";
-        });
-        
-        horizontal.forEach(element => {
-            abstand2.style.display = "none";
-            abstand1.style.display = "none";
-            abstand3.style.display = "none";
-            abstand4.style.display = "none";
-            abstand5.style.display = "none";
-            abstand6.style.display = "none";
-        });
-
-
-    } else {
-        horizontal.forEach(element => {
-            element.style.width = "30%";
-            liege.style.width = "calc(90% + 20px)";
-            liege.style.maxWidth = "95vw";
-            abstand2.style.display = "block";
-            abstand1.style.display = "block";
-            abstand3.style.display = "block";
-            abstand4.style.display = "block";
-            abstand5.style.display = "block";
-            abstand6.style.display = "block";
-        });
-
-        vertical.forEach(element => {
-            element.style.width = "calc(20% - 3px)";
-        });
-
-        welcome.forEach(element => {
-            element.style.fontSize = "1.5rem";
-        });
-    
-}}
-
-changeContentForMobile();
-window.onload = adjustContent;
-window.onresize = adjustContent;
-
-function isMobileDevice() {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-  }
-
-function changeContentForMobile() {
-    if (isMobileDevice()) {
-      desktopMobile.style.color = "#ffffff";
-    }
-}
-
-changeContentForMobile();
-window.onload = adjustContent;
-window.onresize = adjustContent;
-
-
-function playAudio(url) {
-    new Audio(url).play();
-}
-
-
-function deactivateHover() {
-    document.querySelectorAll(".metaData").forEach(element => {
-        element.style.backgroundColor = "transparent";
-        element.style.color = "transparent";
-    });
-
-    document.querySelectorAll(".fullScreen").forEach(element => {
-        element.style.backgroundColor = "#b5b5b5ea";
-    });
-
-    desktopMobile.style.display = "none";
-    deactivateButton.style.display = "none";
-    activateButton.style.display = "inline";
-    desktopMovbileClick.style.marginTop = "16px";
-}
-
-function activateHover() {
+function openLeonMayer() {
     location.reload();
+};
+
+function openAbout() {
+  window.location = "über-mich/index.html";
 }
 
-document.querySelectorAll('#toC a').forEach(anchor => {
+function isMobile() {
+  const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+  return regex.test(navigator.userAgent);
+};
+
+var w = window.innerWidth;
+var h = window.innerHeight;
+
+widthText.innerHTML = w + " x " + h;
+
+document.querySelectorAll('#toC1 a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault(); // Prevent default behavior of anchor tag
       const targetId = this.getAttribute('href').substring(1); // Get the id of the target section
@@ -205,96 +60,110 @@ document.querySelectorAll('#toC a').forEach(anchor => {
       }
     });
   });
-
-  document.querySelectorAll('#toC1 a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent default behavior of anchor tag
-      const targetId = this.getAttribute('href').substring(1); // Get the id of the target section
-      const targetElement = document.getElementById(targetId); // Find the target element
-      if (targetElement) {
-        // Scroll to the target element smoothly
-        targetElement.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
+  
   let scrollButton = document.getElementById("scrollToTopButton");
 
   window.onscroll = function() {scrollFunction()};
 
   function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200 ) {
-        scrollButton.style.opacity = "1";
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 ) {
+        scrollButton.style.opacity = "0";
         scrollButton.style.transition = "0.5s";
     } else {
-        scrollButton.style.opacity = "0";
+        scrollButton.style.opacity = "1";
         scrollButton.style.transition = "0.5s";
     }
   };
-  
-function comingSoon() {
-    alert("Diese Funktion ist bald verfügbar!");
-}
 
-function closeGalerie() {
-    fullScreenGalerie.style.display = "none";
-    window.onscroll = null;
-    document.body.style.overflow = '';
-    scrollToTopButton.style.display = "inline";
-}
+  function hideScrollButton() {
+    let vw62 = window.innerWidth*0.62;
 
-var slideIndex = 1;
-
-function currentSlide(n) {
-
-
-  showSlides(slideIndex = n);
-
-  var fullScreenGalerie = document.getElementById('fullScreenGalerie');
-  let slides = document.getElementsByClassName('mySlides');
-
-
-  if (slides.length === 0) {
-    console.error("No elements found with class 'mySlides'");
-    return;
+    if (window.innerHeight > vw62) {
+        scrollButton.style.display = "none";
+    }
   }
 
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  hideScrollButton();
+
+  const photoPreview = document.getElementById('photoPreview');
+  const scrollRightButton = document.getElementById('scrollRight'); // Only the right button remains
+  
+  // Function to clone images to create a seamless loop effect
+  function cloneImages() {
+      const images = Array.from(photoPreview.children);
+      images.forEach((image) => {
+          const clone = image.cloneNode(true);
+          clone.classList.add('cloned');
+          photoPreview.appendChild(clone);
+      });
   }
   
-  if (n > slides.length) { n = 1; }
-  if (n < 1) { n = slides.length; }
-
-  slides[n - 1].style.display = "block";
-  fullScreenGalerie.style.display = "inline";
-
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-
-  window.onscroll = function() {
-    window.scrollTo(scrollLeft, scrollTop);
-  };
-
-  scrollButton.style.display = "none";
-}
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function showSlides(n) {
-  var fullScreenGalerie = document.getElementById('fullScreenGalerie');
-  var slides = fullScreenGalerie.getElementsByClassName('mySlides');
-
-  if (n > slides.length) { slideIndex = 1; }
-  if (n < 1) { slideIndex = slides.length; }
-
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+  // Clone images initially to simulate an infinite loop
+  cloneImages();
+  
+  // Calculate the scroll amount based on one image width plus the gap
+  function getScrollAmount() {
+      const firstImage = photoPreview.querySelector('.previewPhotos');
+      const gap = parseInt(getComputedStyle(photoPreview).gap);
+      return firstImage.offsetWidth + gap;
   }
-
-  slides[slideIndex - 1].style.display = "block";
-}
-
-let slides = document.getElementsByClassName('mySlides');
+  
+  // Smoothly scroll to the right by a given amount with animation
+  function smoothScrollBy(amount) {
+      const startPosition = photoPreview.scrollLeft;
+      const endPosition = startPosition + amount;
+      const duration = 300; // Duration of the scroll animation in milliseconds
+      let startTime = null;
+  
+      function animateScroll(currentTime) {
+          if (!startTime) startTime = currentTime;
+          const elapsedTime = currentTime - startTime;
+          const progress = Math.min(elapsedTime / duration, 1);
+          const ease = 0.5 * (1 - Math.cos(Math.PI * progress)); // Ease-in-out formula
+          photoPreview.scrollLeft = startPosition + (endPosition - startPosition) * ease;
+  
+          if (progress < 1) {
+              requestAnimationFrame(animateScroll);
+          } else {
+              adjustScrollPosition(); // Adjust position after scroll completes
+          }
+      }
+  
+      requestAnimationFrame(animateScroll);
+  }
+  
+  // Adjust the scroll position to maintain a seamless loop without visible resets
+  function adjustScrollPosition() {
+      const originalWidth = photoPreview.scrollWidth / 2; // Half of the scroll width
+  
+      // Adjust the scroll position when it reaches the boundaries of the cloned images
+      if (photoPreview.scrollLeft >= originalWidth) {
+          // Reset back to the equivalent start without visible jump
+          photoPreview.scrollLeft = photoPreview.scrollLeft - originalWidth;
+      } else if (photoPreview.scrollLeft < 0) {
+          // Handle case if scrolling goes beyond the left edge (though left scroll is disabled)
+          photoPreview.scrollLeft = 0;
+      }
+  }
+  
+  // Set initial scroll position to create a 3px gap at the start
+  function initializeScrollPosition() {
+      const firstImage = photoPreview.querySelector('.previewPhotos');
+      const gap = 3; // Desired gap in pixels
+      photoPreview.scrollLeft = firstImage.offsetWidth + gap;
+  }
+  
+  // Initialize scroll position on page load
+  initializeScrollPosition();
+  
+  // Event listener for the right scroll button
+  scrollRightButton.addEventListener('click', () => {
+      smoothScrollBy(getScrollAmount());
+  });
+  
+  // Ensure scroll adjustments happen correctly on resize
+  window.addEventListener('resize', () => {
+      // Recalculate and adjust position
+      adjustScrollPosition();
+  });
+  
