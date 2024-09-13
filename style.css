@@ -74,7 +74,8 @@ p {
     position: fixed;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(7px);
+    backdrop-filter: blur(3px);
+    background-color: var(--menu);
     user-select: none;
     -webkit-user-select: none;
     color: var(--darkGrey);
@@ -274,17 +275,26 @@ p {
 
 @media (max-width: 550px){
 
+    #menu {
+        display: block;
+    }
+
     #menuBar {
         display: none;
     }
 
     #menuBurger {
-        display: inline;
+        display: block;
+        top: 0;
+        position: fixed;
+        height: var(--menuHeight);
+        right: 0;
     }
 
     #menuName {
-        width: 80vw;
-        min-width: 50px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+        height: var(--menuHeight);
     }
 
 }
@@ -655,7 +665,7 @@ button:not(:hover) {
             margin-right: -30px;
             padding-left: 30px;
             padding-right: 30px;
-            margin-top: -10px;
+            margin-top: -5px;
         }
 
         .aboutButton:not(:hover) {
