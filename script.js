@@ -1,16 +1,3 @@
-window.addEventListener('scroll', function() {
-    // Berechne die Parallax-Geschwindigkeit, z.B. 0.5 bedeutet, dass das Bild halb so schnell scrollt wie der Inhalt
-    var scrollPosition = window.scrollY;
-    var parallaxSpeed = 0.4;
-
-    let iHeight = window.innerHeight - 80;
-    let percentage = (window.scrollY / iHeight) -0.2;
-    
-    // Setze die neue Hintergrundposition basierend auf dem Scrollwert
-    document.querySelector('.bannerFotos').style.top = -(scrollPosition * parallaxSpeed) + 'px';
-    document.getElementById("parallax").style.opacity = percentage;
-});
-
 const dialog = document.getElementById("menuDialog");
 
 function showDialog() {
@@ -32,6 +19,27 @@ function closeDialog() {
     blur.style.webkitBackdropFilter = "blur(0px)";
     blur.style.pointerEvents = "none";
 };
+
+
+
+
+//Standard-Code Ende
+
+
+
+
+window.addEventListener('scroll', function() {
+    // Berechne die Parallax-Geschwindigkeit, z.B. 0.5 bedeutet, dass das Bild halb so schnell scrollt wie der Inhalt
+    var scrollPosition = window.scrollY;
+    var parallaxSpeed = 0.4;
+
+    let iHeight = window.innerHeight - 80;
+    let percentage = (window.scrollY / iHeight) -0.2;
+    
+    // Setze die neue Hintergrundposition basierend auf dem Scrollwert
+    document.querySelector('.bannerFotos').style.top = -(scrollPosition * parallaxSpeed) + 'px';
+    document.getElementById("parallax").style.opacity = percentage;
+});
 
 function openLeonMayer() {
     location.reload();

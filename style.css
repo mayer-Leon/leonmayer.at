@@ -214,7 +214,7 @@ p {
     }
 
     .dialogA {
-        color: white;
+        color: #c1c1c1;
         font-size: 20px;-webkit-user-select: none; /* Safari */        
         -moz-user-select: none; /* Firefox */
         -ms-user-select: none; /* IE10+/Edge */
@@ -223,6 +223,15 @@ p {
         padding-left: 20px;
         padding-right: 20px;
         border-radius: 5px;
+        transition: 300ms;
+    }
+
+    .dialogA:hover {
+        color: white;
+    }
+
+    #dialogHome {
+        color: white;
     }
 
     #close {
