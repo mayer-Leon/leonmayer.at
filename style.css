@@ -11,6 +11,7 @@
     --theme: #2179ac;
     --themeLight: #ffffff;
     --themeDark: #242424;
+    --menuHeight: 50px;
 }
 
 body {
@@ -67,7 +68,7 @@ p {
 }
 
 #menu {
-    height: 50px;
+    height: var(--menuHeight);
     width: 100%;
     display: flex;
     position: fixed;
@@ -75,177 +76,183 @@ p {
     z-index: 1000;
     backdrop-filter: blur(7px);
     user-select: none;
+    -webkit-user-select: none;
     color: var(--darkGrey);
     margin-top: 0px;
+    box-shadow: #00000084 0px 10px 30px;
 }
 
-#menuName {
-    display: flex;
-    width: clamp(200px, 25vw, 6000px);
-    background-color: var(--menu);
-    justify-content: center;
-    z-index: 1002;
-    margin-bottom: 0;
-    padding-top: 0;
-    font-display: optional;
-}
+    #menuName {
+        display: flex;
+        width: clamp(200px, 25vw, 6000px);
+        background-color: var(--menu);
+        justify-content: center;
+        z-index: 1002;
+        margin-bottom: 0;
+        padding-top: 0;
+        font-display: optional;
+        }
 
-#menuKamera:hover, #menuLeon:hover {
-    cursor: pointer;
-}
+        #menuKamera:hover, #menuLeon:hover {
+            cursor: pointer;
+        }
 
-#menuLeon {
-    font-size: 21px;
-    font-weight: 700;
-    color: var(--white);
-    z-index: 1000;
-    margin-top: 8px;
-    min-width: 120px;
-}
+        #menuLeon {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--white);
+            z-index: 1000;
+            margin-top: 8px;
+            min-width: 120px;
+        }
 
-#menuKamera {
-    margin-left: 10px;
-    height: 35px;
-    width: 35px;
-    margin-top: 6px;
-    z-index: 1000;
-}
+    #menuKamera {
+        margin-left: 10px;
+        height: 35px;
+        width: 35px;
+        margin-top: 6px;
+        z-index: 1000;
+    }
 
-#menuBar {
-    height: 50px;
-    width: 75vw;
-    display: flex;
-    justify-content: space-evenly;
-    background-color: var(--menu);
-    z-index: 1000;
-}
+    #menuBar {
+        height: var(--menuHeight);
+        width: 75vw;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--menu);
+        z-index: 1000;
+    }
 
-.menuItem {
-    color: var(--darkGrey);
-    text-decoration: none;
-    margin-top: 10px;
-    font-size: 17px;
-    z-index: 1000;
-    font-weight: 500;
-}
+    .menuItem {
+        color: var(--darkGrey);
+        text-decoration: none;
+        margin-top: 10px;
+        font-size: 17px;
+        z-index: 1000;
+        font-weight: 500;
+        }
 
-.menuItem:hover {
-    z-index: 3000;
-}
+        .menuItem:hover {
+            z-index: 3000;
+        }
 
-.menuItem:hover {
-    color: white;
-    transition: 0.3s;
-}
+        .menuItem:hover {
+            color: white;
+            transition: 0.3s;
+            }
 
-.menuItem:not(:hover) {
-    font-weight: 500;
-    z-index: 0;
-    transition: .3s;
-    color: var(--darkGrey);
-}
+        .menuItem:not(:hover) {
+            font-weight: 500;
+            z-index: 0;
+            transition: .3s;
+            color: var(--darkGrey);
+        }
 
-#menuBurger {
-    width: 20vw;
-    background-color: var(--menu);
-    display: none;
-    z-index: 1000;
-}
+    #menuBurger {
+        width: 20vw;
+        background-color: var(--menu);
+        display: none;
+        z-index: 1000;
+        }
 
-#burger {
-    font-size: 22px;
-    text-decoration: none;
-    background-color: #ffffff00;
-    padding-left: 5px;
-    padding-right: 5px;
-    height: 34px;
-    width: 34px;
-    color: #bbbbbb;
-    font-weight: 100;
-    margin-top: 5px;
-    border-radius: 7px;
-    z-index: 1000000000000;
-}
+        #burger {
+            font-size: 22px;
+            text-decoration: none;
+            background-color: #ffffff00;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 34px;
+            width: 34px;
+            color: #bbbbbb;
+            font-weight: 100;
+            margin-top: 5px;
+            border-radius: 7px;
+            z-index: 1000000000000;
+        }
 
-#burger:hover {
-    background-color: #ffffff;
-    color: #000000;
-    transition: 0.3s;
-    cursor: pointer;
-}
+        #burger:hover {
+            background-color: #ffffff;
+            color: #000000;
+            transition: 0.3s;
+            cursor: pointer;
+        }
 
-#menuDialog {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    background-color: black;
-    color: white;
-    border-style: none;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    width: 150px;
-    height: 200px;
-    border-radius: 12px;
-    z-index: 1000000000000;
-    opacity: 0;
-    transition: 200ms;
-    box-shadow: rgba(255, 255, 255, 0.408) 0px 0px 50px;
-    pointer-events: none;
-}
+    #menuDialog {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        background-color: black;
+        color: white;
+        border-style: none;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 150px;
+        height: 200px;
+        border-radius: 12px;
+        z-index: 1000000000000;
+        opacity: 0;
+        transition: 200ms;
+        box-shadow: rgba(255, 255, 255, 0.408) 0px 0px 50px;
+        pointer-events: none;
+    }
 
-#blur {
-    background-color: #00000000;
-    position: fixed;
-    width: 200vw;
-    height: 200vh;
-    backdrop-filter: blur(0px);
-    -webkit-backdrop-filter: blur(0px);
-    z-index: 100000000;
-    pointer-events: none;
-    display: block;
-    transition: 300ms;
-}
+    #blur {
+        background-color: #00000000;
+        position: fixed;
+        width: 200vw;
+        height: 200vh;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        z-index: 100000000;
+        pointer-events: none;
+        display: block;
+        transition: 300ms;
+    }
 
-.dialogA {
-    color: white;
-    font-size: 20px;-webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-    transition: 300ms;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius: 5px;
-}
+    .dialogA {
+        color: white;
+        font-size: 20px;-webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        transition: 300ms;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 5px;
+    }
 
-#close {
-    background-color: #00000000;
-    color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 2px;
-    height: 43px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
+    #close {
+        background-color: #00000000;
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 2px;
+        height: 43px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
 
-#close:hover {
-    background-color: #333333;
-}
+    #close:hover {
+        background-color: #333333;
+    }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    margin-top: 30px;
-    padding: 0;
-    line-height: 40px;
-}
+    ul {
+        list-style-type: none;
+        margin: 0;
+        margin-top: 30px;
+        padding: 0;
+        line-height: 40px;
+    }
 
 @media (max-width: 750px){
+
+    :root {
+        --menuHeight: 43px;
+    }
 
     .menuItem {
         font-size: 15px;
@@ -306,7 +313,7 @@ hr {
 
 
 #menuHome {
-    text-decoration: underline;
+    color: white;
 }
 
 #banner {
@@ -319,7 +326,7 @@ hr {
     position: fixed;
     z-index: -5;
 
-    margin-top: 50px;
+    margin-top: var(--menuHeight);
 }
 
 .bannerFotos {
@@ -377,7 +384,7 @@ hr {
     height: calc(100vh - 80px);
     max-height: calc(60vw - 80px);
 
-    margin-top: 50px;
+    margin-top: var(--menuHeight);
 }
 
 #content {
