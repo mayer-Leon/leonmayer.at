@@ -37,7 +37,7 @@ body {
 .h1 {
     margin-bottom: 5px;
     margin-top: 0px;
-    font-weight: 00;
+    font-weight: 700;
     font-size: 2.2rem;
 }
 
@@ -200,6 +200,13 @@ p {
         pointer-events: none;
     }
 
+    #work {
+        height: var(--menuHeight);
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
     #blur {
         background-color: #00000000;
         position: fixed;
@@ -253,7 +260,7 @@ p {
     ul {
         list-style-type: none;
         margin: 0;
-        margin-top: 30px;
+        margin-top: -2px;
         padding: 0;
         line-height: 40px;
     }
@@ -282,7 +289,7 @@ p {
     }
 }
 
-@media (max-width: 550px){
+@media (max-width: 620px){
 
     #menu {
         display: block;
@@ -338,24 +345,72 @@ hr {
 #banner {
     background-color: #00000000;
     width: 100%;
-    height: calc(100vh - 80px);
-    max-height: calc(60vw - 80px);
+    aspect-ratio: 3;
 
     margin: auto;
-    position: fixed;
     z-index: -5;
 
-    margin-top: var(--menuHeight);
+    margin-top: 0;
+
+    border-radius: 20px;
 }
 
-.bannerFotos {
+#bannerFotos {
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: relative;
-    margin-top: 0;
+    margin-top: var(--menuHeight);
     z-index: 0;
+    object-position: 0%;
+
+    transition: 400ms ease-in-out;
 }
+
+#buttons {
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-top: -20px;
+    position: relative;
+}
+
+#nextOne, #prevOne {
+    background-color: #3b3b3b;
+    color: white;
+    width: 5vw;
+    height: 5vw;
+    min-width: 35px;
+    min-height: 35px;
+    max-width: 60px;
+    max-height: 60px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    top: 20px;
+    border-radius: 10vw;
+    box-shadow: 0px 0px 50px black;
+}
+
+#nextOne:hover, #prevOne:hover {
+    background-color: #666666;
+}
+
+#nextOne {
+    margin-right: 10px;
+}
+
+#prevOne {
+    margin-left: 10px;
+}
+
+
 
 #startLink {
     color: black;
@@ -395,17 +450,6 @@ hr {
     transition: 0.2s;
 }
 
-#parallax {
-    background-color: #000000a6;
-    opacity: 0;
-    z-index: 50;
-    width: 100%;
-    height: calc(100vh - 80px);
-    max-height: calc(60vw - 80px);
-
-    margin-top: var(--menuHeight);
-}
-
 #content {
     z-index: 2;
     margin-top: -80px;
@@ -416,45 +460,6 @@ hr {
     height: 20px;
     width: 100%;
     border-radius: 10px 10px 0px 0px;
-}
-
-#space2 {
-    height: 80px;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: -5000;
-}
-
-#scrollToTopButton {
-    position: absolute;
-    margin: auto;
-    bottom: 0px;
-    z-index: 5;
-    background-color: var(--bg);
-    width: 60px;
-    height: 60px;
-    font-size: 20px;
-    font-weight: 900;
-    right: calc(50% - 30px);
-    border-radius: 5px 5px 0px 0px;
-    opacity: 1;
-}
-
-#arrowUp {
-    width: 35px;
-    margin: auto;
-    vertical-align: center;
-    margin-top: -25px;
-    padding-bottom: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    filter: invert(90);
-    transform: rotate(180deg);
-}
-
-#i1000px {
-    height: 1000px;
-    background-color: var(--bg);
-    margin-top: 0;
 }
 
 #meJpg {
@@ -558,7 +563,6 @@ button:not(:hover) {
 
     #description {
         zoom: 100%;
-        background-color: var(--bg);
         padding-top: 50px;
         padding-bottom: 80px;
     }
@@ -579,7 +583,6 @@ button:not(:hover) {
 
     #about {
         position: relative;
-        background-color: var(--bg);
         height: auto;
         width: 100%;
         margin-top: -10px;
@@ -655,13 +658,6 @@ button:not(:hover) {
             cursor: pointer;
         }
 
-        #photoPreview {
-            position: relative;
-            background-color: var(--bg);
-            width: 100%;
-            height: 500px;
-        }
-
         #aboutButtons {
             position: relative;
             width: 100%;
@@ -703,6 +699,11 @@ button:not(:hover) {
             cursor: pointer;
         }
 
+        #space {
+            height: 100vh;
+            width: 100%;
+        }
+
 #blueHr {
     color: var(--themeDark);
     border-width: 2px;
@@ -713,48 +714,57 @@ button:not(:hover) {
     opacity: 0.9;
 }
 
-.scroll-container {
+#footer {
+    height: auto;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #363636;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: space-evenly;
 }
 
-#photoPreview {
-    padding-top: 20px;
-    width: 100%;
-    height: 300px; /* Adjust height as needed */
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    overflow-x: hidden; /* Hide the scrollbar */
-    position: relative;
-    scroll-behavior: auto; /* Smooth scrolling will be handled by JS */
+.foComponent {
+    background-color: #00000030;
+    padding: 30px;
+    border-radius: 10px;
 }
 
-.previewPhotos {
-    border-radius: 5px;
-    flex-shrink: 0; /* Prevent images from shrinking */
-}
+    .foBy {
+        margin: auto;
+        font-size: 0.7rem;
+        margin-bottom: 0;
+        font-weight: 300;
+    }
 
-.scroll-button {
-    background-color: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-}
+    .foPerson {
+        margin: auto;
+        margin-top: -5px;
+        font-weight: 500;
+        font-size: 1rem;
+    }
 
-.scroll-button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
+    .foTitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
 
+    .foElement {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
+    .foLinks {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
 
-
-
+    #haldeSo {
+        margin-top: -5px;
+    }
 
 
 /* --- MEDIA QUERIES --- *//* --- MEDIA QUERIES --- *//* --- MEDIA QUERIES --- *//* --- MEDIA QUERIES --- *//* --- MEDIA QUERIES --- */
@@ -817,5 +827,16 @@ button:not(:hover) {
         object-position: center 20%;
         scale: 115%;
         transform: translateX(0px);
+    }
+}
+
+@media (max-width: 130vh) {
+    #banner {
+        aspect-ratio: 1.5;
+        transition: 500ms ease-in-out;
+    }
+
+    #buttons {
+        aspect-ratio: 1.5;
     }
 }
