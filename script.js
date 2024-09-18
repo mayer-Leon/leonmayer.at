@@ -62,6 +62,8 @@ function photoControl() {
     } else if (bannerFotos.style.objectPosition == "100% center") {
         document.getElementById("nextOne").style.opacity = "0";
         document.getElementById("nextOne").style.pointerEvents = "none";
+        document.getElementById("fotoOne").style.opacity = "1";
+        document.getElementById("fotoOne").style.pointerEvents = "all";
         
     } else {
         document.getElementById("prevOne").style.opacity = "1";
@@ -84,5 +86,9 @@ function openLeonMayer() {
 
 function openAbout() {
   window.location = "über-mich/index.html";
+}
+
+function openFotogalerie() {
+    window.location = "fotogalerie/index.html"
 }
   
