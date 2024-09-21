@@ -12,7 +12,7 @@
         <div id="menuName" onclick="openLeonMayer()"><img id="menuKamera" src="Seiten-Fotos/Kamera.png" alt=""><h2 id="menuLeon" class="h2">Leon Mayer</h2></div>
         <div id="menuBarContainer">
         <div id="menuBar">
-            <a class="menuItem" id="menuHome" href="/leonmayer.at">HOME</a>
+            <a class="menuItem" id="menuHome" href="/index.html">HOME</a>
             <a class="menuItem" id="menuAbout" href="/über-mich/index.html">ÜBER MICH</a>
             <div id="work">
                 <a class="menuItem" id="menuFotogalerie" href="/fotogalerie/index.html">FOTOGALERIE</a>
@@ -26,11 +26,11 @@
 
     <div id="menuDialog">
         <ul>
-            <li><a class="dialogA" id="dialogHome" href="/leonmayer.at">Home</a></li>
-            <li><a class="dialogA" id="dialogAbout" href="/leonmayer.at/über-mich">Über Mich</a></li>
+            <li><a class="dialogA" id="dialogHome" href="/index.html">Home</a></li>
+            <li><a class="dialogA" id="dialogAbout" href="/über-mich/index.html">Über Mich</a></li>
             <li><a class="dialogA" id="dialogFotogalerie" href="fotogalerie/index.html">Fotogalerie</a></li>
             <li><a class="dialogA" id="dialogFilme" href="/filme/index.html">Filme</a></li>
-            <li><a class="dialogA" id="dialogKontakt" href="/leonmayer.at/kontakt">Kontakt</a></li>
+            <li><a class="dialogA" id="dialogKontakt" href="/kontakt/index.html">Kontakt</a></li>
         </ul>
         <button id="close" onclick="closeDialog()">✖</button>
     </div>
@@ -39,12 +39,23 @@
     <p id="widthText">abc</p>
 
     <div id="banner">       
-            <img src="Seiten-Fotos/Fotoview.jpg" alt="" id="bannerFotos">
-            <div id="buttons">
-                <button id="prevOne" onclick="prevOne()">&#10094;</button>
-                <button id="fotoOne" onclick="openFotogalerie()">Fotogalerie ‎ ‎ &#10095;</button>
-                <button id="nextOne" onclick="nextOne()">&#10095;</button>
+            <div id="bannerFotos">
+                <img src="Seiten-Fotos/Collage/IMG2024-0220.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0601.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0160.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0100.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0232.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0675.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0437.jpg" class="bannerFoto">
+                <img src="Seiten-Fotos/Collage/IMG2024-0289.jpg" class="bannerFoto">
             </div>
+    </div>
+
+    
+    <div id="buttons">
+        <button id="prevOne" onclick="prevOne()">&#10094;</button>
+        <button id="fotoOne" onclick="openFotogalerie()">Fotogalerie ‎ ‎ &#10095;</button>
+        <button id="nextOne" onclick="nextOne()">&#10095;</button>
     </div>
 
     <!--<div id="space"></div>-->
@@ -88,7 +99,7 @@
                 </div>
                 <div class="foBlock">
                     <p class="foBy">JavaScript</p>
-                    <a class="foPerson" href="https://jusch.xyz/" id="haldeSo">Julian Schwarzer</a>
+                    <a class="foPerson" href="https://jusch.xyz/" class="foLink">Julian Schwarzer</a>
                 </div>
             </div>
         </div>

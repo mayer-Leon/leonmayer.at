@@ -35,31 +35,29 @@ function prevOne() {
 function photoControl() {
 
     const bannerFotos = document.getElementById("bannerFotos");
-
-    let kanten = (bannerFotos.naturalWidth / bannerFotos.naturalHeight / 1.5) -1;
-
-    let oneKanten = (kanten -1) / 2;
+    const banner = document.getElementById("banner");
     let one30 = window.innerHeight * 1.3;
     let width = window.innerWidth;
 
-
-    let percent = 100 / kanten * photo;
-    let onePercent = 100 / oneKanten /2 * photo;
-
-
-    document.getElementById("prevOne");
-
+    const elementRect = banner.getBoundingClientRect();
+    const containerRect = bannerFotos.getBoundingClientRect();
+    const distanceToRightEdge = containerRect.right - elementRect.right;
+    let childCount = bannerFotos.childElementCount;
+    
     if (width > one30) {
-        bannerFotos.style.objectPosition = onePercent + "%";
-
+    bannerFotos.style.left = -1 * photo * 50 + "%";
+    childCount = bannerFotos.childElementCount / 2;
     } else {
-        bannerFotos.style.objectPosition = percent + "%";
+        bannerFotos.style.left = -1 * photo * 100 + "%";
+        childCount = bannerFotos.childElementCount;
     };
 
-    if (bannerFotos.style.objectPosition == "0% center") {
+    let end = (childCount - 1) * (-100) + "%";
+
+    if (bannerFotos.style.left == "0%") {
         document.getElementById("prevOne").style.opacity = "0";   
-        document.getElementById("prevOne").style.pointerEvents = "none";    
-    } else if (bannerFotos.style.objectPosition == "100% center") {
+        document.getElementById("prevOne").style.pointerEvents = "none";
+    } else if (bannerFotos.style.left == end) {
         document.getElementById("nextOne").style.opacity = "0";
         document.getElementById("nextOne").style.pointerEvents = "none";
         document.getElementById("fotoOne").style.opacity = "1";
@@ -71,6 +69,7 @@ function photoControl() {
         document.getElementById("prevOne").style.pointerEvents = "all";
         document.getElementById("nextOne").style.pointerEvents = "all";
     }
+    
 }
 
 photoControl();
