@@ -410,7 +410,7 @@ hr {
     margin: auto;
     z-index: -5;
 
-    margin-top: 0;
+    margin-top: var(--menuHeight);
     overflow: hidden;
 }
 
@@ -419,11 +419,15 @@ hr {
     height: 100%;
     object-fit: cover;
     position: relative;
-    margin-top: var(--menuHeight);
+    margin-top: 0;
     z-index: 0;
 
     transition: 400ms ease-in-out;
     display: flex;
+}
+
+.bannerFoto {
+    border-radius: 5px;
 }
 
 #buttons {
@@ -440,27 +444,26 @@ hr {
 }
 
 #nextOne, #prevOne, #fotoOne {    
-    background-color: #ffffff56;
-    backdrop-filter: blur(10px);
+    background-color: #0f0f0f8d;
     color: rgb(255, 255, 255);
-    width: 5vw;
-    height: 5vw;
-    min-width: 45px;
-    min-height: 45px;
-    max-width: 60px;
-    max-height: 60px;
+    backdrop-filter: blur(3px);
+    width: 4vw;
+    height: 4vw;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 50px;
+    max-height: 50px;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
     top: 20px;
-    border-radius: 10vw;
-    box-shadow: 0px 0px 50px black;
+    border-radius: 10px;
     transition: 500ms;
 }
 
 #nextOne:hover, #prevOne:hover, #fotoOne:hover {
-    background-color: #666666;
+    background-color: #ffffff56;
 }
 
 #nextOne {
@@ -479,7 +482,6 @@ hr {
     padding-right: 20px;
     margin-right: 10px;
 
-    background-color: #3b3b3b33;
     backdrop-filter: blur(10px);
     opacity: 0;
     pointer-events: none;
@@ -600,8 +602,9 @@ button {
     border-style: none;
 }
 
-#buttonFotogalerie {
+#buttonKontakt {
     margin-top: 10px;
+    border-radius: 5px;
 }
 
 button:hover {    
@@ -675,7 +678,7 @@ button:not(:hover) {
             width: 850px;
             max-width: 90vw;
             margin: auto;
-            border-radius: 10px;
+            border-radius: 5px;
             display: flex;
             flex-direction: row;
             height: 100%;
@@ -755,7 +758,7 @@ button:not(:hover) {
 
         .aboutButton:not(:hover) {
             position: relative;
-            background-color: #0f0f0f;
+            background-color: var(--bg);
             color: white;
             height: 28px;
             font-size: 1rem;
