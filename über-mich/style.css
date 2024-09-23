@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --bg: #0f0f0f;
+    --text: #ffffff;
+    --white: #ffffff;
+    --darkGrey: #b6b6b6;
+    --lightGrey: #464646;
+    --menu: #212121;
+    --menuOver: #5555558e;
+    --theme: #2179ac;
+    --themeLight: #ffffff;
+    --themeDark: #242424;
+    --menuHeight: 50px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    align-self: center;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    zoom: 100%;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+::selection {
+    color: #000000;
+    background-color: var(--white);
+}
+
+.h1 {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.h2 {
+    margin-top: 3px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.h3 {
+    font-weight: 400;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+a {    
+    color: white;
+}
+
+p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+#menu {
+    height: var(--menuHeight);
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    background-color: var(--menu);
+    user-select: none;
+    -webkit-user-select: none;
+    color: var(--darkGrey);
+    margin-top: 0px;
+    box-shadow: #00000084 0px 10px 30px;
+}
+
+    #menuName {
+        display: flex;
+        width: clamp(200px, 25vw, 6000px);
+        background-color: var(--menu);
+        justify-content: center;
+        z-index: 1002;
+        margin-bottom: 0;
+        padding-top: 0;
+        font-display: optional;
+        }
+
+        #menuKamera:hover, #menuLeon:hover {
+            cursor: pointer;
+        }
+
+        #menuLeon {
+            font-size: 21px;
+            font-weight: 700;
+            color: var(--white);
+            z-index: 1000;
+            margin-top: 8px;
+            min-width: 120px;
+        }
+
+    #menuKamera {
+        margin-left: 10px;
+        height: 35px;
+        width: 35px;
+        margin-top: 6px;
+        z-index: 1000;
+    }
+
+    #menuBar {
+        height: var(--menuHeight);
+        width: 75vw;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--menu);
+        z-index: 1000;
+    }
+
+    .menuItem {
+        color: var(--darkGrey);
+        text-decoration: none;
+        margin-top: 10px;
+        font-size: 17px;
+        z-index: 1000;
+        font-weight: 500;
+        }
+
+        .menuItem:hover {
+            z-index: 3000;
+        }
+
+        .menuItem:hover {
+            color: white;
+            transition: 0.3s;
+            }
+
+        .menuItem:not(:hover) {
+            font-weight: 500;
+            z-index: 0;
+            transition: .3s;
+            color: var(--darkGrey);
+        }
+
+    #menuBurger {
+        width: 20vw;
+        background-color: var(--menu);
+        display: none;
+        z-index: 1000;
+        }
+
+        #burger {
+            font-size: 22px;
+            text-decoration: none;
+            background-color: #ffffff00;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 34px;
+            width: 34px;
+            color: #bbbbbb;
+            font-weight: 100;
+            margin-top: 5px;
+            border-radius: 7px;
+            z-index: 1000000000000;
+        }
+
+        #burger:hover {
+            background-color: #ffffff;
+            color: #000000;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+    #menuDialog {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: fixed;
+        background-color: black;
+        color: white;
+        border-style: none;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        width: 150px;
+        height: 200px;
+        border-radius: 12px;
+        z-index: 1000000000000;
+        opacity: 0;
+        transition: 200ms;
+        box-shadow: rgba(255, 255, 255, 0.408) 0px 0px 50px;
+        pointer-events: none;
+    }
+
+    #work {
+        height: var(--menuHeight);
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    #blur {
+        background-color: #00000000;
+        position: fixed;
+        width: 200vw;
+        height: 200vh;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        z-index: 100000000;
+        pointer-events: none;
+        display: block;
+        transition: 300ms;
+    }
+
+    .dialogA {
+        color: #c1c1c1;
+        font-size: 20px;-webkit-user-select: none; /* Safari */        
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+/Edge */
+        user-select: none; /* Standard */
+        transition: 300ms;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 5px;
+        transition: 300ms;
+    }
+
+    .dialogA:hover {
+        color: white;
+    }
+
+    #close {
+        background-color: #00000000;
+        color: white;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 2px;
+        height: 43px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    #close:hover {
+        background-color: #333333;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        margin-top: -2px;
+        padding: 0;
+        line-height: 40px;
+    }
+
+
+
+    
+
+#footer {
+    height: auto;
+    margin-top: 100px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #2a2a2a;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.foComponent {
+    background-color: #00000000;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+    .foBy {
+        margin: auto;
+        font-size: 0.7rem;
+        margin-bottom: 0;
+        font-weight: 300;
+    }
+
+    .foPerson {
+        margin: auto;
+        margin-top: -5px;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .foTitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+
+    .foElement {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .foLinks {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+
+    #haldeSo {
+        margin-top: -5px;
+    }
+
+
+
+
+
+@media (max-width: 750px){
+
+    :root {
+        --menuHeight: 43px;
+    }
+
+    .menuItem {
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    #menuLeon {
+        font-size: 19px;
+        margin-top: 7px;
+    }
+
+    #menuKamera {
+        margin-top: 8px;
+        height: 28px;
+        width: 28px;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 620px){
+
+    #menu {
+        display: block;
+    }
+
+    #menuBar {
+        display: none;
+    }
+
+    #menuBurger {
+        display: block;
+        top: 0;
+        position: fixed;
+        height: var(--menuHeight);
+        right: 0;
+    }
+
+    #menuName {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        height: var(--menuHeight);
+    }
+
+}
+
+button {
+    background-color: #afafaf;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    height: 30px;
+    padding-bottom: 2px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 7px;
+    border-style: none;
+}
+
+#space {
+    height: var(--menuHeight);
+}
+
+/* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- */
+
+#menuAbout, #dialogAbout {
+    color: white;
+}
