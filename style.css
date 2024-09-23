@@ -274,13 +274,13 @@ p {
     margin-top: 100px;
     padding-top: 10px;
     padding-bottom: 30px;
-    background-color: #363636;
+    background-color: #2a2a2a;
     display: flex;
     justify-content: space-evenly;
 }
 
 .foComponent {
-    background-color: #00000030;
+    background-color: #00000000;
     padding: 30px;
     border-radius: 10px;
 }
@@ -377,6 +377,11 @@ p {
 
 /* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- *//* --- Standard-Code Ende --- */
 
+:root {
+    --pages: 850px;
+    --maxPages: 90%;
+}
+
 #widthText {
     height: 0;
     margin-top: 0;
@@ -396,7 +401,6 @@ hr {
 #hr1 {
     margin-top: 40px;
 }
-
 
 #menuHome {
     color: white;
@@ -662,7 +666,7 @@ button:not(:hover) {
             margin-top: -30px;
         }
 
-    #about {
+    #about, #kontakt {
         position: relative;
         height: auto;
         width: 100%;
@@ -671,12 +675,12 @@ button:not(:hover) {
         padding-top: 30px;
     }
     
-        #aboutCard {
+        #aboutCard, #kontaktCard {
             position: relative;
             background-color: var(--themeDark);
             color: #ffffff;
-            width: 850px;
-            max-width: 90vw;
+            width: var(--pages);
+            max-width: var(--maxPages);
             margin: auto;
             border-radius: 5px;
             display: flex;
@@ -830,10 +834,13 @@ button:not(:hover) {
 
 @media (max-width: 700px) {
 
+    :root {
+        --pages: 500px
+    }
+
     #aboutCard {
         flex-direction: column-reverse;
-        width: 500px;
-        max-width: 90%;
+        max-width: var(--maxPages);
     }
 
     #aboutTexte {
