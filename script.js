@@ -1,5 +1,21 @@
 const dialog = document.getElementById("menuDialog");
 
+
+let childCount = bannerFotos.childElementCount;
+let end;
+    
+if (width > one30) {
+bannerFotos.style.left = -1 * photo * 50 + "%";
+childCount = bannerFotos.childElementCount / 2;
+} else {
+    bannerFotos.style.left = -1 * photo * 100 + "%";
+    childCount = bannerFotos.childElementCount;
+};
+
+end = (childCount - 1) * (-100) + "%";
+
+
+
 function showDialog() {
     menuDialog.style.opacity = "1";
     menuDialog.style.pointerEvents = "all";
@@ -32,6 +48,20 @@ function prevOne() {
     photoControl();
 }
 
+document.addEventListener("keydown", function(event) {
+    event.preventDefault();
+    if (event.key === "ArrowLeft" || event.key === "a") {
+        if (bannerFotos.style.left != "0%") {
+            prevOne();
+        }
+    }
+    else if (event.key === "ArrowRight" || event.key === "d") {
+        if (bannerFotos.style.left != end) {
+            nextOne();
+        }
+    }
+});
+
 function photoControl() {
 
     const bannerFotos = document.getElementById("bannerFotos");
@@ -42,17 +72,6 @@ function photoControl() {
     const elementRect = banner.getBoundingClientRect();
     const containerRect = bannerFotos.getBoundingClientRect();
     const distanceToRightEdge = containerRect.right - elementRect.right;
-    let childCount = bannerFotos.childElementCount;
-    
-    if (width > one30) {
-    bannerFotos.style.left = -1 * photo * 50 + "%";
-    childCount = bannerFotos.childElementCount / 2;
-    } else {
-        bannerFotos.style.left = -1 * photo * 100 + "%";
-        childCount = bannerFotos.childElementCount;
-    };
-
-    let end = (childCount - 1) * (-100) + "%";
 
     if (bannerFotos.style.left == "0%") {
         document.getElementById("prevOne").style.opacity = "0";   
@@ -69,10 +88,12 @@ function photoControl() {
         document.getElementById("prevOne").style.pointerEvents = "all";
         document.getElementById("nextOne").style.pointerEvents = "all";
     }
-    
+
 }
 
 photoControl();
+
+
 
 
 
