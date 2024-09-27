@@ -52,10 +52,6 @@ hr {
     display: flex;
 }
 
-.bannerFoto {
-    border-radius: 5px;
-}
-
 #buttons {
     margin: auto;
     width: 100%;
