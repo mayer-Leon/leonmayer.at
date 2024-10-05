@@ -46,6 +46,15 @@ function closeDialog() {
     blur.style.pointerEvents = "none";
 }
 
+function isMobile() {
+const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+return regex.test(navigator.userAgent);
+}
+
+if (isMobile()) {
+    document.querySelectorAll('*').classList.remove("hover");
+}
+
 function photoControl() {
     const bannerFotos = document.getElementById("bannerFotos");
     const width = window.innerWidth;
@@ -114,4 +123,3 @@ function openAbout() {
 function openFotogalerie() {
     window.location = "fotogalerie/index.html"
 }
-  

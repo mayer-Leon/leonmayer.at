@@ -2,6 +2,7 @@
 
 :root {
     --bg: #0f0f0f;
+    --button: #101010;
     --text: #ffffff;
     --white: #ffffff;
     --darkGrey: #b6b6b6;
@@ -10,7 +11,7 @@
     --menuOver: #5555558e;
     --theme: #2179ac;
     --themeLight: #ffffff;
-    --themeDark: #242424;
+    --themeDark: #2c2c2c;
     --menuHeight: 50px;
 }
 
@@ -321,8 +322,11 @@ p {
         margin-top: -5px;
     }
 
-
-
+a, button {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
 
 
 @media (max-width: 750px){
