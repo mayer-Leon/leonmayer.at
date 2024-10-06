@@ -12,7 +12,10 @@
     --theme: #2179ac;
     --themeLight: #ffffff;
     --themeDark: #2c2c2c;
+
     --menuHeight: 50px;
+    --pages: 850px;
+    --maxPages: 90%;
 }
 
 body {
@@ -66,6 +69,25 @@ a {
 p {
     font-size: 1rem;
     margin-top: 10px;
+}
+
+button {
+    background-color: #afafaf;
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-decoration: none;
+    height: 30px;
+    padding-bottom: 2px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 7px;
+    border-style: none;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 #menu {
@@ -184,7 +206,7 @@ p {
         left: 50%;
         transform: translate(-50%, -50%);
         position: fixed;
-        background-color: black;
+        background-color: var(--menu);
         color: white;
         border-style: none;
         padding-left: 50px;
@@ -197,7 +219,6 @@ p {
         z-index: 1000000000000;
         opacity: 0;
         transition: 200ms;
-        box-shadow: rgba(255, 255, 255, 0.408) 0px 0px 50px;
         pointer-events: none;
     }
 
@@ -238,10 +259,6 @@ p {
         color: white;
     }
 
-    #dialogHome {
-        color: white;
-    }
-
     #close {
         background-color: #00000000;
         color: white;
@@ -278,6 +295,7 @@ p {
     background-color: #202020;
     display: flex;
     justify-content: space-evenly;
+    color: #a5a5a5;
 }
 
 .foComponent {
@@ -291,6 +309,7 @@ p {
         font-size: 0.7rem;
         margin-bottom: 0;
         font-weight: 300;
+        color: #a5a5a5;
     }
 
     .foPerson {
@@ -298,24 +317,32 @@ p {
         margin-top: -5px;
         font-weight: 500;
         font-size: 1rem;
+        color: #a5a5a5;
     }
 
     .foTitle {
         font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 15px;
+        color: #a5a5a5;
     }
 
     .foElement {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        color: #a5a5a5;
     }
 
     .foLinks {
         display: flex;
         gap: 10px;
         flex-direction: column;
+        color: #a5a5a5;
+    }
+
+    .foLink {
+        color: #a5a5a5;
     }
 
     #haldeSo {

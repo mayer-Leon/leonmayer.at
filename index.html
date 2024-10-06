@@ -6,6 +6,13 @@
     <title>Leon Mayer - Fotograf und Filmemacher</title>
     <link rel="stylesheet" href="standard.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="Seiten-Fotos/Favicon.png">
+
+    <style>
+        #dialogHome {
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -77,11 +84,11 @@
         <div id="aboutCard">
             <div id="aboutTexte">
                 <h3 id="aboutH">Über Mich</h3>
-                <p class="aboutText"><span id="b">Hallo!</span> Ich bin Leon Mayer und verfolge seit ich das erste Mal eine Kamera in der Hand hielt das Ziel, professioneller Fotograf und Filmemacher
+                <p class="aboutText"><span class="b">Hallo!</span> Ich bin <span class="b">Leon Mayer</span> und verfolge seit ich das erste Mal eine Kamera in der Hand hielt das Ziel, professioneller Fotograf und Filmemacher
                     zu werden.</p> <p class="aboutText">Als ich mir im Dezember 2022 eine richtige Kamera gekauft habe, habe ich begonnen, mich intensiv mit Fotografie auseinanderzusetzen und bis 
                     heute nicht damit aufgehört. Meine Kamera begleitet mich auf jedem Ausflug und jeder Reise und durch die ständige Übung verbessere ich mich immer mehr.</p>
                     <div id="buttonArea">
-                <div class="aboutButtons"><a href="/über-mich" class="aboutButton">Weiterlesen<span class="arrow">&#10095;</span></a></div>
+                <div class="aboutButtons"><a href="/über-mich" class="aboutButton"><span class="ausgleich">&#10095;</span>Weiterlesen<span class="arrow">&#10095;</span></a></div>
             </div></div>
             <div id="aboutFotoDiv"><img src="Seiten-Fotos/Fotografenfoto.jpg" alt="Portrait: Leon Mayer" id="aboutFoto" onclick="openAbout()"></div>
         </div>
@@ -92,19 +99,27 @@
             <img src="Seiten-Fotos/Fotoskamera.png" class="photoPhoto">
             <h3 class="workH">Fotografie</h3>
             <p class="workText">All meine besten Fotos an einem Ort.</p>
-            <a href="/fotogalerie" class="aboutButton workButton">Zur Fotogalerie<span class="arrow">&#10095;</span></a>
+            <a href="/fotogalerie" class="aboutButton workButton"><span class="ausgleich">&#10095;</span>Zur Fotogalerie<span class="arrow">&#10095;</span></a>
         </div>
         <div id="videography">
             <img src="Seiten-Fotos/Videokamera.png" class="photoPhoto">
             <h3 class="workH">Videografie</h3>
             <p class="workText">All meine filmischen Arbeiten.</p>
-            <a href="/filme" class="aboutButton workButton">Zur Videogalerie<span class="arrow">&#10095;</span></a>
+            <a href="/filme" class="aboutButton workButton"><span class="ausgleich">&#10095;</span>Zur Videogalerie<span class="arrow">&#10095;</span></a>
         </div>
+    </div>
+
+    <div id="showReel">
+        <video muted id="showVideo" loop>
+            <source src="filme/Schotter-Fluege.mp4" type="video/mp4">
+        </video>
     </div>
 
     <div id="kontakt">
         <div id="kontaktCard">
-            <div id="kontaktTexte"></div>
+            <h3 class="workH contactH">Kontakt</h3>
+            <p class="workText">Hier kannst du mich kontaktieren.</p>
+            <a href="/kontakt" class="aboutButton workButton contactButton"><span class="ausgleich">&#10095;</span>Zur Kontaktseite<span class="arrow">&#10095;</span></a>
         </div>
     </div>
 
