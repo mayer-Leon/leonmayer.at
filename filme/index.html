@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filme - Leon Mayer</title>
-    <link rel="stylesheet" href="/leonmayer.at/standard.css">
-    <link rel="stylesheet" href="/leonmayer.at/filme/style.css">
+    <link rel="stylesheet" href="/standard.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/Seiten-Fotos/Favicon.png">
     <style>
         #menuHome:hover {
             color: white;
@@ -18,7 +19,7 @@
         <div id="menuName" onclick="openLeonMayer()"><img id="menuKamera" src="/Seiten-Fotos/Kamera.png" alt=""><h2 id="menuLeon" class="h2">Leon Mayer</h2></div>
         <div id="menuBarContainer">
         <div id="menuBar">
-            <a class="menuItem" id="menuHome" href="/index.html">HOME</a>
+            <a class="menuItem" id="menuHome" href="/">HOME</a>
             <a class="menuItem" id="menuAbout" href="/über-mich">ÜBER MICH</a>
             <div id="work">
                 <a class="menuItem" id="menuFotogalerie" href="/fotogalerie">FOTOGALERIE</a>
@@ -32,7 +33,7 @@
 
     <div id="menuDialog">
         <ul>
-            <li><a class="dialogA" id="dialogHome" href="/index.html">Home</a></li>
+            <li><a class="dialogA" id="dialogHome" href="/">Home</a></li>
             <li><a class="dialogA" id="dialogAbout" href="/über-mich">Über Mich</a></li>
             <li><a class="dialogA" id="dialogFotogalerie" href="/fotogalerie">Fotogalerie</a></li>
             <li><a class="dialogA" id="dialogFilme" href="/filme">Filme</a></li>
@@ -51,17 +52,20 @@
     <hr width="50%" style="margin-bottom: 40px; width: 600px; max-width: 50%;">
     <h3 style="margin-bottom: 2px;">Griechenland 2024 - Highlights</h3>
     <p style="color: #b8b8b8; margin-top: 0; font-size: 0.9rem;" >Gesamte Produktion</p>
-    <iframe width="948" height="474" class="videos" src="https://www.youtube.com/embed/SDPRp-0QzoE?rel=0" title="Griechenland 2024 - Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <hr class="width80">
+    <video controls class="videos">
+        <source src="Griechenland 2024.mp4">
+    </video>    <hr class="width80">
     <h3 style="margin-bottom: 2px;">Maibaumfest 2024</h3>
-    <p style="color: #b8b8b8; margin-top: 0; font-size: 0.9rem;" >Kameraführung, Schnitt</p>
-    <iframe width="948" height="474" class="videos" src="https://www.youtube.com/embed/i1Dke2Pkg2s?rel=0" title="Maibaumfest 2024" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <p style="color: #b8b8b8; margin-top: 0; font-size: 0.9rem;">Kameraführung, Schnitt</p>
+    <video controls class="videos">
+        <source src="Maibaum-Fest 2024.mp4">
+    </video>
     <hr class="width80">
     <h3 style="margin-bottom: 2px;">Schotter-Flüge</h3>
-    <p style="color: #b8b8b8; margin-top: 0; font-size: 0.9rem;" >Drohnenführung, Schnitt, Color-Grading</p>
-    <iframe width="948" height="474" class="videos" src="https://www.youtube.com/embed/bCW0jVnxfGk?rel=0" title="Maibaumfest 2024" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-
+    <p style="color: #b8b8b8; margin-top: 0; font-size: 0.9rem;">Drohnenführung, Schnitt, Color-Grading</p>
+    <video controls class="videos">
+        <source src="Schotter-Fluege.mp4">
+    </video>
     <script>
         const dialog = document.getElementById("menuDialog");
 
