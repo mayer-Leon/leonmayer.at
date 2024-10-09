@@ -85,6 +85,11 @@
             blur.style.webkitBackdropFilter = "blur(0px)";
             blur.style.pointerEvents = "none";
         };
+
+        const videos = document.querySelectorAll(".videos");
+        videos.forEach(video => {
+        video.style.height = document.body.scrollWidth * 0.95 / 2 + "px";
+        });
     </script>
 </body>
 </html>
