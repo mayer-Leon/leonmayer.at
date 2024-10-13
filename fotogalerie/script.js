@@ -262,6 +262,33 @@ document.addEventListener('DOMContentLoaded', function() {
 function closeFullScreen() {
     fullScreen.style.display = "none";
     window.onscroll = null;
+    
+
+    expandButton.style.backgroundColor = "#0f0f0f7a";
+    expandButton.style.color = "white";
+    
+    expandButton.addEventListener('mouseover', function() {
+        expandButton.style.backgroundColor = '#ffffff';
+        expandButton.style.color = '#000000';
+    });
+
+    expandButton.addEventListener('mouseout', function() {
+        expandButton.style.backgroundColor = '#0f0f0f7a';
+        expandButton.style.color = 'white';
+    });
+    
+    clickCounter = 0;
+    menu.style.display = "flex";
+    document.documentElement.style.setProperty('--menuHeight', originalHeight);
+
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+}
+
 }
 
 var slideIndex = 1;
@@ -309,4 +336,99 @@ function showSlides(n) {
 
   slides[slideIndex - 1].style.display = "flex";
   fullScreen.style.display = "block";
+}
+
+var clickCounter = 0;
+let expandButton = document.getElementById("expand");
+let menu = document.getElementById("menu");
+
+if (isMobileDevice()) {
+    expandButton.style.display = "none";
+}
+
+let originalHeight;
+
+function getHeight() {
+    return getComputedStyle(document.documentElement).getPropertyValue('--menuHeight').trim();
+}
+
+window.onload = function() {
+    originalHeight = getHeight();
+};
+
+function expand() {
+    clickCounter++;
+
+    if (clickCounter == 0) {
+        expandButton.addEventListener('mouseover', function() {
+            expandButton.style.backgroundColor = '#ffffff';
+            expandButton.style.color = '#000000';
+        });
+
+        expandButton.addEventListener('mouseout', function() {
+            expandButton.style.backgroundColor = '#0f0f0f7a';
+            expandButton.style.color = 'white';
+        });
+    } else if (clickCounter == 1) {
+        expandButton.style.backgroundColor = "#ffffff50";
+        expandButton.style.color = "white";
+
+        
+        expandButton.addEventListener('mouseover', function() {
+            expandButton.style.backgroundColor = '#ffffff';
+            expandButton.style.color = '#000000';
+        });
+
+        expandButton.addEventListener('mouseout', function() {
+            expandButton.style.backgroundColor = '#ffffff50';
+            expandButton.style.color = 'white';
+        });
+
+        menu.style.display = "none";
+        document.documentElement.style.setProperty('--menuHeight', "0px");
+        var elem = document.documentElement;
+
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+          } else if (elem.webkitRequestFullscreen) { /* Safari */
+            elem.webkitRequestFullscreen();
+          } else if (elem.msRequestFullscreen) { /* IE11 */
+            elem.msRequestFullscreen();
+          }
+
+
+    } else {
+        expandButton.style.backgroundColor = "#0f0f0f7a";
+        expandButton.style.color = "white";
+        
+        expandButton.addEventListener('mouseover', function() {
+            expandButton.style.backgroundColor = '#ffffff';
+            expandButton.style.color = '#000000';
+        });
+
+        expandButton.addEventListener('mouseout', function() {
+            expandButton.style.backgroundColor = '#0f0f0f7a';
+            expandButton.style.color = 'white';
+        });
+        
+        clickCounter = 0;
+        menu.style.display = "flex";
+        document.documentElement.style.setProperty('--menuHeight', originalHeight);
+
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) { /* Safari */
+            document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { /* IE11 */
+            document.msExitFullscreen();
+          }
+    }
+
+}
+
+function isMobileDevice() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for common mobile user agents
+    return /android|avantgo|blackberry|bada|iemobile|iphone|ipod|opera mini|opera mobi|ipad|windows phone|webos/i.test(userAgent);
 }
