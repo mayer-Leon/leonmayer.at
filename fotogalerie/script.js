@@ -342,8 +342,19 @@ var clickCounter = 0;
 let expandButton = document.getElementById("expand");
 let menu = document.getElementById("menu");
 
+function isMobileDevice() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for common mobile user agents
+    return /android|avantgo|blackberry|bada|iemobile|iphone|ipod|opera mini|opera mobi|ipad|windows phone|webos/i.test(userAgent);
+}
+
 if (isMobileDevice()) {
     expandButton.style.display = "none";
+    document.getElementById("prev").style.backgroundColor = "#0f0f0f7a"
+    document.getElementById("prev").style.color = "#ffffff"
+    document.getElementById("next").style.backgroundColor = "#0f0f0f7a"
+    document.getElementById("next").style.color = "#ffffff"
 }
 
 let originalHeight;
@@ -424,11 +435,4 @@ function expand() {
           }
     }
 
-}
-
-function isMobileDevice() {
-    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-    // Check for common mobile user agents
-    return /android|avantgo|blackberry|bada|iemobile|iphone|ipod|opera mini|opera mobi|ipad|windows phone|webos/i.test(userAgent);
 }
