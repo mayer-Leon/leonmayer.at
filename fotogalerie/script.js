@@ -27,24 +27,6 @@ function closeDialog() {
 
 
 
-document.addEventListener("keydown", function(event) {
-  event.preventDefault();
-  if (event.key === "ArrowLeft" || event.key === "a") {
-      prev.click();
-  }
-  else if (event.key === "ArrowRight" || event.key === "d") {
-      next.click();
-  }
-  else if (event.key === "Escape") {
-      if (window.fullscreenElement) {
-          window.exitFullscreen();
-          closeGalerie();
-      }
-  }
-});
-
-
-
 
 function currentSlide(n) {
 
@@ -206,9 +188,17 @@ function createImageGallery() {
 
     // Update gallery on window resize
     let resizeTimer;
+    let lastWidth = window.innerWidth;
+
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(updateGallery, 250);
+        let currentWidth = window.innerWidth;
+
+        if (currentWidth !== lastWidth) {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(updateGallery, 250);
+            lastWidth = currentWidth;
+        }
+
     });
 
     // Remove the original gallery div
@@ -408,7 +398,7 @@ function expand() {
           }
 
 
-    } else {
+    } else if (clickCounter == 2) {
         expandButton.style.backgroundColor = "#0f0f0f7a";
         expandButton.style.color = "white";
         
@@ -436,3 +426,15 @@ function expand() {
     }
 
 }
+
+
+
+document.addEventListener("keydown", function(event) {
+  event.preventDefault();
+  if (event.key === "ArrowLeft" || event.key === "a") {
+      prev.click();
+  }
+  else if (event.key === "ArrowRight" || event.key === "d") {
+      next.click();
+  }
+});
