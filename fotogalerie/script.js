@@ -252,6 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function closeFullScreen() {
     fullScreen.style.display = "none";
     window.onscroll = null;
+    document.body.style.overflow = 'visible';
     
 
     expandButton.style.backgroundColor = "#0f0f0f7a";
@@ -326,6 +327,7 @@ function showSlides(n) {
 
   slides[slideIndex - 1].style.display = "flex";
   fullScreen.style.display = "block";
+  document.body.style.overflow = 'hidden';
 }
 
 var clickCounter = 0;
