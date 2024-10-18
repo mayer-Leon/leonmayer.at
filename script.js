@@ -26,6 +26,10 @@ function prevOne() {
     photoControl();
 }
 
+function openHome(n) {
+    window.location = "fotogalerie/#home0[n]";
+}
+
 function showDialog() {
     menuDialog.style.opacity = "1";
     menuDialog.style.pointerEvents = "all";
