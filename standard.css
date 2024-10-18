@@ -11,7 +11,7 @@
     --menuOver: #5555558e;
     --theme: #2179ac;
     --themeLight: #ffffff;
-    --themeDark: #2c2c2c;
+    --themeDark: #202020;
 
     --menuHeight: 50px;
     --pages: 850px;
@@ -207,7 +207,7 @@ button:hover {
         transform: translate(-50%, -50%);
         position: fixed;
         background-color: var(--menu);
-        color: white;
+        color: #ffffff;
         border-style: none;
         padding-left: 50px;
         padding-right: 50px;
@@ -215,11 +215,14 @@ button:hover {
         padding-bottom: 50px;
         width: 150px;
         height: 200px;
-        border-radius: 12px;
+        border-radius: 10px;
         z-index: 1000000000000;
         opacity: 0;
         transition: 200ms;
         pointer-events: none;
+        border-width: 2px;
+        border-color: #484848;
+        border-style: solid;
     }
 
     #work {
@@ -343,6 +346,10 @@ button:hover {
 
     .foLink {
         color: #a5a5a5;
+    }
+    
+    .foContact {
+        flex-basis: 100%;
     }
 
     #haldeSo {
